@@ -1,0 +1,40 @@
+C:\Users\pilar\Documents\Visual Studio 2015\Projects\ProyectoTienda\WCFTiendaServices\bin\ApplicationInsights.config
+C:\Users\pilar\Documents\Visual Studio 2015\Projects\ProyectoTienda\WCFTiendaServices\bin\WCFTiendaServices.dll.config
+C:\Users\pilar\Documents\Visual Studio 2015\Projects\ProyectoTienda\WCFTiendaServices\bin\WCFTiendaServices.dll
+C:\Users\pilar\Documents\Visual Studio 2015\Projects\ProyectoTienda\WCFTiendaServices\bin\WCFTiendaServices.pdb
+C:\Users\pilar\Documents\Visual Studio 2015\Projects\ProyectoTienda\WCFTiendaServices\bin\Iesi.Collections.dll
+C:\Users\pilar\Documents\Visual Studio 2015\Projects\ProyectoTienda\WCFTiendaServices\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\pilar\Documents\Visual Studio 2015\Projects\ProyectoTienda\WCFTiendaServices\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\pilar\Documents\Visual Studio 2015\Projects\ProyectoTienda\WCFTiendaServices\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\pilar\Documents\Visual Studio 2015\Projects\ProyectoTienda\WCFTiendaServices\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\pilar\Documents\Visual Studio 2015\Projects\ProyectoTienda\WCFTiendaServices\bin\Microsoft.AI.Web.dll
+C:\Users\pilar\Documents\Visual Studio 2015\Projects\ProyectoTienda\WCFTiendaServices\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\pilar\Documents\Visual Studio 2015\Projects\ProyectoTienda\WCFTiendaServices\bin\Microsoft.ApplicationInsights.dll
+C:\Users\pilar\Documents\Visual Studio 2015\Projects\ProyectoTienda\WCFTiendaServices\bin\NHibernate.dll
+C:\Users\pilar\Documents\Visual Studio 2015\Projects\ProyectoTienda\WCFTiendaServices\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\pilar\Documents\Visual Studio 2015\Projects\ProyectoTienda\WCFTiendaServices\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\pilar\Documents\Visual Studio 2015\Projects\ProyectoTienda\WCFTiendaServices\bin\Microsoft.AI.Web.xml
+C:\Users\pilar\Documents\Visual Studio 2015\Projects\ProyectoTienda\WCFTiendaServices\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\pilar\Documents\Visual Studio 2015\Projects\ProyectoTienda\WCFTiendaServices\bin\Microsoft.ApplicationInsights.xml
+C:\Users\pilar\Documents\Visual Studio 2015\Projects\ProyectoTienda\WCFTiendaServices\obj\Debug\WCFTiendaServices.dll
+C:\Users\pilar\Documents\Visual Studio 2015\Projects\ProyectoTienda\WCFTiendaServices\obj\Debug\WCFTiendaServices.pdb
+C:\Users\pilar\Desktop\test\ProyectoTienda\WCFTiendaServices\bin\ApplicationInsights.config
+C:\Users\pilar\Desktop\test\ProyectoTienda\WCFTiendaServices\bin\WCFTiendaServices.dll.config
+C:\Users\pilar\Desktop\test\ProyectoTienda\WCFTiendaServices\bin\WCFTiendaServices.dll
+C:\Users\pilar\Desktop\test\ProyectoTienda\WCFTiendaServices\bin\WCFTiendaServices.pdb
+C:\Users\pilar\Desktop\test\ProyectoTienda\WCFTiendaServices\bin\Iesi.Collections.dll
+C:\Users\pilar\Desktop\test\ProyectoTienda\WCFTiendaServices\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\pilar\Desktop\test\ProyectoTienda\WCFTiendaServices\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\pilar\Desktop\test\ProyectoTienda\WCFTiendaServices\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\pilar\Desktop\test\ProyectoTienda\WCFTiendaServices\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\pilar\Desktop\test\ProyectoTienda\WCFTiendaServices\bin\Microsoft.AI.Web.dll
+C:\Users\pilar\Desktop\test\ProyectoTienda\WCFTiendaServices\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\pilar\Desktop\test\ProyectoTienda\WCFTiendaServices\bin\Microsoft.ApplicationInsights.dll
+C:\Users\pilar\Desktop\test\ProyectoTienda\WCFTiendaServices\bin\NHibernate.dll
+C:\Users\pilar\Desktop\test\ProyectoTienda\WCFTiendaServices\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\pilar\Desktop\test\ProyectoTienda\WCFTiendaServices\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\pilar\Desktop\test\ProyectoTienda\WCFTiendaServices\bin\Microsoft.AI.Web.xml
+C:\Users\pilar\Desktop\test\ProyectoTienda\WCFTiendaServices\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\pilar\Desktop\test\ProyectoTienda\WCFTiendaServices\bin\Microsoft.ApplicationInsights.xml
+C:\Users\pilar\Desktop\test\ProyectoTienda\WCFTiendaServices\obj\Debug\WCFTiendaServices.dll
+C:\Users\pilar\Desktop\test\ProyectoTienda\WCFTiendaServices\obj\Debug\WCFTiendaServices.pdb

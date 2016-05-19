@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="WCFTiendaServices"
+                   namespace="WCFTiendaServices.Dominio"
+                   default-lazy="false">
+  <class name="VentaDetalle" table="tb_venta_detalle">
+    <composite-id name="Pk" >
+      <key-many-to-one name="nu_venta" column="nu_venta" />
+      <key-many-to-one name="co_producto" column="co_producto" />
+    </composite-id>
+    <property name="nu_cantidad" column="nu_cantidad" />
+    <property name="nu_subtotal" column="nu_subtotal" />
+  </class>
+</hibernate-mapping>
+

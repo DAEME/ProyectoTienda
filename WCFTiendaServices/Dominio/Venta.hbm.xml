@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="WCFTiendaServices"
+                   namespace="WCFTiendaServices.Dominio"
+                   default-lazy="false">
+  <class name="Venta" table="tb_venta">
+    <id name="nu_venta" column="nu_venta">
+      <generator class="increment" />
+    </id>
+    <many-to-one name="nu_ruc" column="nu_ruc" />
+    <property name="dt_fecha" column="dt_fecha" />
+    <property name="nu_total" column="nu_total" />
+  </class>
+</hibernate-mapping>

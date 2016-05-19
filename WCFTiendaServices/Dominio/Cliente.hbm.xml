@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="WCFTiendaServices"
+                   namespace="WCFTiendaServices.Dominio"
+                   default-lazy="false">
+  <class name="Cliente" table="tb_cliente">
+    <id name="nu_ruc" column="nu_ruc">
+      <generator class="assigned" />
+    </id>
+    <property name="tx_nombre" column="tx_nombre" />
+    <property name="tx_direccion" column="tx_direccion" />
+  </class>
+</hibernate-mapping>
