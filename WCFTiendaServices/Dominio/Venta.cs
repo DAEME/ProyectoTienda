@@ -11,11 +11,17 @@ namespace WCFTiendaServices.Dominio
     {
         [DataMember]
         public int nu_venta { get; set; }
+
         [DataMember]
-        public string nu_ruc { get; set; }
+        public Cliente nu_ruc { get; set; }
+
         [DataMember]
         public DateTime dt_fecha { get; set; }
+
         [DataMember]
         public decimal nu_total { get; set; }
+
+        [DataMember]
+        public IList<VentaDetalle> Detalles { get; set; }
     }
 }

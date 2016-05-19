@@ -30,7 +30,7 @@ namespace WCFTiendaServices
 
             Venta venta = new Venta()
             {
-                nu_ruc = nu_ruc,
+                nu_ruc = cliente,
                 dt_fecha = DateTime.Now,
                 nu_total = 0m
             };
@@ -45,9 +45,9 @@ namespace WCFTiendaServices
                 producto = productoDAO.Obtener(item.co_producto);
                 ventaDetalle = new VentaDetalle()
                 {
-                    pk = new VentaDetallePK()
+                    Pk = new VentaDetallePK()
                     {
-                        nu_venta = venta,
+                        nu_venta = venta.nu_venta,
                         co_producto = producto
                     },
                     nu_cantidad = item.nu_cantidad,
