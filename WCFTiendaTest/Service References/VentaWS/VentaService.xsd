@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:20000/VentaService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WCFTiendaServices.Dominio" />
+  <xs:element name="Vender">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nu_ruc" nillable="true" type="xs:string" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WCFTiendaServices.Dominio" minOccurs="0" name="items" nillable="true" type="q1:ArrayOfItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VenderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WCFTiendaServices.Dominio" minOccurs="0" name="VenderResult" nillable="true" type="q2:Venta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarVentas">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarVentasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WCFTiendaServices.Dominio" minOccurs="0" name="ListarVentasResult" nillable="true" type="q3:ArrayOfVenta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
