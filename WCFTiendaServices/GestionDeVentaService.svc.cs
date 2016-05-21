@@ -10,7 +10,7 @@ using WCFTiendaServices.Persistencia;
 
 namespace WCFTiendaServices
 {
-   public class VentaService : IVentaService
+   public class GestionDeVentaService : IGestionDeVentaService
     {
         private ClienteDAO clienteDAO = new ClienteDAO();
         private ProductoDAO productoDAO = new ProductoDAO();
