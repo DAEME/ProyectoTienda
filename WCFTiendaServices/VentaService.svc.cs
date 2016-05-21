@@ -17,8 +17,9 @@ namespace WCFTiendaServices
         private VentaDAO ventaDAO = new VentaDAO();
         private VentaDetalleDAO ventaDetalleDAO = new VentaDetalleDAO();
 
-        public Venta Vender(string nu_ruc, List<Item> items)
+        public Venta Vender(string nu_ruc, List<VentaDetalle> items)
         {
+            
             Cliente cliente = clienteDAO.Obtener(nu_ruc);
             if (cliente == null) // cliente inexistente
                 throw new FaultException<ClienteInexistenteError>(
@@ -40,9 +41,9 @@ namespace WCFTiendaServices
             Producto producto = null;
             VentaDetalle ventaDetalle = null;
             decimal total = 0m;
-            foreach (Item item in items)
+            foreach (VentaDetalle item in items)
             {
-                producto = productoDAO.Obtener(item.co_producto);
+                producto = productoDAO.Obtener(Convert.ToInt32(item.co_producto));
                 ventaDetalle = new VentaDetalle()
                 {
                     Pk = new VentaDetallePK()

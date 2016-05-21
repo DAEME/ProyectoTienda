@@ -10,12 +10,14 @@ namespace WCFTiendaServices.Persistencia
     {
         public Entidad Crear(Entidad entidad)
         {
-            using (ISession sesion = NHibernateHelper.ObtenerSesion())
-            {
-                sesion.Save(entidad);
-                sesion.Flush();
-            }
-            return entidad;
+                using (ISession sesion = NHibernateHelper.ObtenerSesion())
+                {
+                    sesion.Save(entidad);
+                    sesion.Flush();
+                }
+                return entidad;
+            
+            
         }
         public Entidad Obtener(Id id)
         {
