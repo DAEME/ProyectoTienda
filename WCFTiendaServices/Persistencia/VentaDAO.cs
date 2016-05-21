@@ -8,6 +8,8 @@ namespace WCFTiendaServices.Persistencia
 {
     public class VentaDAO:BaseDAO<Venta,int>
     {
+
+
     }
 
     public class VentaDetalleDAO : BaseDAO<VentaDetalle, VentaDetallePK>

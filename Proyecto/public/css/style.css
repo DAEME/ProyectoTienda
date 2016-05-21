@@ -1,0 +1,408 @@
+﻿
+.Titles{
+    font-size:24px; font-weight: bold; color:#af1b2a;
+}
+
+.Title {
+    font-size:12px;  font-weight: bold; 
+}
+
+.TitleBackg {
+    font-size:12px;  font-weight: bold;
+}
+
+.Accordion {
+    padding-left:0px;  padding-right:0px; padding-bottom:1px; padding-top:1px; 
+}
+
+.Sinespacio {
+    padding-left:0px;  padding-right:0px; padding-bottom:1px; padding-top:1px; margin: 0px;
+}
+
+.Sinespacio-izq {
+    padding-left:4px;  padding-right:0px; padding-bottom:1px; padding-top:1px; 
+}
+
+.Accordion-label {
+    padding-left:4px;  padding-right:0px; padding-bottom:0px; padding-top:10px; 
+}
+
+.SubTitle{
+    font-size: 13px; font-weight: bold; color:#af1b2a;
+}
+.Cuerpo{
+    font-size: 10px;font-weight: bold; color:#af1b2a;
+}
+.margin{
+    padding: 2px;margin: 2px;
+}
+.glyphicon { margin-right:-2px; }
+.panel-body { padding:0px; }
+.panel-body table tr td { padding-left: 15px }
+.panel-body .table {margin-bottom: 0px; }
+
+#TableHeader{
+/*     background:#431425;color: #ffffff; font-weight: bold; font-size: 12px; width: 100%;*/
+     background:#af1b2a;color: #ffffff; font-weight: bold; font-size: 11px; width: 100%;
+     
+}
+.TableHeader{
+     background:#af1b2a;color: #ffffff; font-weight: bold; font-size: 11px; width: 100%;
+}
+
+#TableHeaderModal{
+    background:#af1b2a;color: #ffffff; font-weight: bold; font-size: 13px; width: 100%;
+}
+.TableHeaderModal{
+    background:#af1b2a;color: #ffffff; font-weight: bold; font-size: 13px; width: 100%;
+}
+
+#TableModal{
+    width: 100%; margin: 0px;padding: 0px;
+}
+
+footer{
+    /*background: #117799;*/
+    background: #af1b2a;
+    color: #ffffff;
+    width: 100%;
+    padding: 0px;
+    margin: 0px; 
+}
+  #footer{
+      width: 100%;
+      color: #ffffff;
+      margin: 0px;
+      padding:0px;
+      font-size: 12px;
+  }
+   .container
+  {
+      
+      background: #ffffff;
+      padding: 0px;
+      /*margin: 0px;*/
+  }
+  
+  
+/*.table-hover.selected > tbody > tr > td.active:hover,
+.table-hover.selected > tbody > tr > th.active:hover,
+.table-hover.selected > tbody > tr.active:hover > td,
+.table-hover.selected > tbody > tr:hover > .active,
+.table-hover.selected > tbody > tr.active:hover > th {
+  background-color: #e8e8e8;
+}*/
+
+
+    /******************************* Jose Caycho Garcia ********************************/
+.label-obligatorio {
+    color: red;
+    background: #FFF;
+    border:none;
+    font-size:12px;
+    font-weight:bold;
+    
+}
+
+.label-obligatorio-visible
+{ 
+    color:#FFF;
+}
+
+
+fieldset.scheduler-border {
+    border: 1px groove #ddd !important;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    margin: 0 0 1.5em 0 !important;
+    -webkit-box-shadow:  0px 0px 0px 0px #000;
+            box-shadow:  0px 0px 0px 0px #000;
+}
+
+legend.scheduler-border {
+    font-size: 1.2em !important;
+    font-weight: bold !important;
+    text-align: left !important;
+
+}
+/*************************************************************************************/
+
+.ui-autocomplete {
+        max-height: 200px;
+        overflow-y: auto;
+        /* prevent horizontal scrollbar */
+        overflow-x: hidden;
+        *z-index: 1000;
+        z-index: 1000;
+        position: absolute;
+    }
+    /* IE 6 doesn't support max-height
+   * we use height instead, but this forces the menu to always be this tall
+   */
+    * html .ui-autocomplete {
+        height: 100px;
+        *z-index: 1000;
+        z-index: 1000;
+        position: absolute;
+    }
+    .index {
+        *z-index: 1;
+        z-index: 1;
+        position: relative;
+    }
+
+    /***************************************************************/
+
+.panel .panel-body .nav {
+    list-style: none;
+     *zoom: 1;
+    background-image: -webkit-gradient(linear,left top, left bottom,from(#fefefe), color-stop(0.5,#f0f0f0), color-stop(0.51, #e6e6e6));
+	background-image: -moz-linear-gradient(#fefefe 0%, #f0f0f0 50%, #e6e6e6 51%);
+	background-image: -o-linear-gradient(#fefefe 0%, #f0f0f0 50%, #e6e6e6 51%);
+	background-image: -ms-linear-gradient(#fefefe 0%, #f0f0f0 50%, #e6e6e6 51%);
+	background-image: linear-gradient(#fefefe 0%, #f0f0f0 50%, #e6e6e6 51%);
+    border-right: 1px solid rgba(9, 9, 9, 0.125);
+	box-shadow: 1px -1px 0 rgba(255, 255, 255, 0.6) inset;
+	-moz-box-shadow: 1px -1px 0 rgba(255, 255, 255, 0.6) inset;
+	-webkit-box-shadow: 1px -1px 0 rgba(255, 255, 255, 0.6) inset;
+	
+	position:relative;
+	
+	float: left;
+	list-style: none;
+
+ 
+}
+
+.panel .panel-body .nav > li > a {
+    color: #af1b2a;
+	display: block;
+	font: 12px/0.6 Lobster,Arial,sans-serif;
+	padding: 10px 18px 12px;
+ 
+    margin: 0px auto;
+	position: relative;
+	 
+ 
+}
+
+
+/**============================================================================================*/ 
+body{
+   /*// background-image: url('../img/squairy_light.png');*/
+    background-color:#f0eeee;
+    font-size:1em;
+    font-family:"Trebuchet MS",Verdana,Helvetica,Sans-Serif;
+    margin:0;
+    padding:0;
+    color:#696969;top:0
+
+}
+
+ #title{font-size:10px;    }
+#mainmenu{
+    font-size:12px;
+    margin:0 auto;
+    width:1024px
+
+}
+ p,ul{
+     margin-bottom:20px;
+     line-height:1.6em
+
+ }
+ #mainmenu a span{
+     color:#4f4f4f;
+     font-size:12px!important
+
+ }
+
+.page{
+    position:relative;
+    padding:0;
+    top:0;
+    width:100%;
+    /*background-image: url('../img/squairy_light.png');*/
+}
+
+ header,#header{
+     position:relative;
+     top:0;
+     margin:0 auto;
+     color:#000;
+     padding:0 50px;
+     width:100%;
+     height:80px;
+    
+
+ }
+ #main{
+        /*width:999px;*/
+       width:75%;
+       height: auto;
+       margin:0 auto;
+       padding:0;
+       background-color:#fff;
+       border:1px solid #ccc;
+       -webkit-box-shadow:2px 2px 5px #999;
+       -moz-box-shadow:2px 2px 5px #999;
+       box-shadow:2px 2px 5px #999
+
+ }
+
+#main_info {
+
+     color: #ffffff;
+     margin: 0px;
+     padding:0px;
+
+}
+
+ #mainBody{
+     padding:20px 10px;
+     height: auto;
+     width:90%;
+
+ }
+ #ayuda{
+     float:right
+
+ }
+ #ayuda a{
+     text-transform:uppercase;
+     color:#333;font-size:12px
+
+ }
+  
+    
+  
+     
+ #container{position:relative;width:999px;margin:0 auto}
+ #overlay{position:absolute;top:0;left:0;width:999px}
+ #nav{clear:both;display:block;height:40px;margin:0 auto;position:relative;padding:5px;}
+  
+
+#title{
+    /*background-image:url('../images/ToennjesGroup.png');*/
+    background-repeat:no-repeat;
+    background-position:center left;
+    padding-left:60px
+
+}
+
+
+#logindisplay{
+    font-size:1.1em;
+    display:block;
+    text-align:right;
+    color:#000;
+    float:right
+
+}
+#logindisplay a:link{
+    color:#000;
+    text-decoration:underline
+
+}
+#logindisplay a:visited{
+    color:#000;
+    text-decoration:underline
+    
+    
+}
+#logindisplay a:hover{
+    color:#000;
+    text-decoration:none
+
+}
+a:link, a:visited {
+    color: #af1b2a;
+    text-decoration: none;
+    
+}
+a:link, a:visited {
+    color: #af1b2a;
+    text-decoration: none;
+}
+
+#user_options>ul {
+    list-style: none;
+    padding-left: 5px;
+    font-size:15px;
+}
+p, ul {
+    margin-bottom: 20px;
+    line-height: 1.6em;
+}
+user agent stylesheetul, menu, dir {
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+}
+
+ #infoUsuario {
+    background-image: url('../img/user.png');
+    background-repeat: no-repeat;
+    background-position: right;
+    padding-right: 35px;
+    padding-top: 0;
+    font-size: 12px;
+    margin: 0 0 0 0;
+
+}
+
+#infoUsuario #identidad{
+    font-size:16px;
+    padding:10px 0 0 0 0;
+    margin:0;
+    color:#818185;
+    text-transform:capitalize
+
+}
+#identidad .resalte{
+    color:#af1b2a
+
+}
+.ui-effects-transfer{
+    border:2px dotted gray
+
+}
+
+#areaUsuario {  text-align:right; }
+nav {width:100%;    }
+@media all and (max-width: 768px) {
+
+    .page{width:100%;}
+    header,#header{position:relative;top:0;margin:0 auto;color:#000;padding:0;height:145px;}
+    #container{position:relative;width:100%;margin:0 auto;}
+    #overlay{position:absolute;top:0;left:0;width:100%;}
+    #title{ background-position: center;padding-left:0px; text-align:center;}
+
+    #infoUsuario{background-position:center;font-size:12px;margin:0 auto; text-align:center;}
+    #infoUsuario #identidad{font-size:16px;padding:0;margin:0;color:#818185; text-transform:capitalize}
+    #areaUsuario { width:100%; text-align:center;}
+
+    #mainmenu{font-size:12px; margin:0 auto;  width:100%;}
+    
+
+
+    #main{width:100%;margin:0 auto;padding:0;background-color:#fff;border:1px solid #ccc;-webkit-box-shadow:2px 2px 5px #999;-moz-box-shadow:2px 2px 5px #999; box-shadow:2px 2px 5px #999}
+   
+   
+    #mainBody{padding:10px 15px; min-height:480px;}
+   
+  
+    #nav{ background:#af1b2a;width:100%;}
+
+   
+   
+    
+
+ 
+
+}
+
+ 

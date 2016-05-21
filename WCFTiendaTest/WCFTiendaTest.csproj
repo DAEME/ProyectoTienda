@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{03151373-A911-4BCF-A0B6-EA2C23156F5C}</ProjectGuid>
+    <ProjectGuid>{2EAA2D38-6709-4812-8ACD-E7C5AA76F83E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WCFTiendaTest</RootNamespace>
@@ -48,9 +48,7 @@
     </When>
     <Otherwise>
       <ItemGroup>
-        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework">
-          <Private>False</Private>
-        </Reference>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
       </ItemGroup>
     </Otherwise>
   </Choose>
@@ -66,13 +64,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Service References\VentaWS\Reference.cs">
+    <Compile Include="Service References\VentasWS\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="TestCliente.cs" />
-    <Compile Include="TestProducto.cs" />
+    <Compile Include="UnitTest1.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -111,39 +108,39 @@
     <None Include="Service References\ProductoWS\WCFTiendaTest.ProductoWS.Producto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\VentaWS\VentaService.wsdl" />
-    <None Include="Service References\VentaWS\VentaService.xsd">
+    <None Include="Service References\VentasWS\VentaService.wsdl" />
+    <None Include="Service References\VentasWS\VentaService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\VentaWS\VentaService1.xsd">
+    <None Include="Service References\VentasWS\VentaService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\VentaWS\VentaService2.xsd">
+    <None Include="Service References\VentasWS\VentaService2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\VentaWS\VentaService3.xsd">
+    <None Include="Service References\VentasWS\VentaService3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\VentaWS\WCFTiendaTest.VentaWS.Venta.datasource">
+    <None Include="Service References\VentasWS\WCFTiendaTest.VentasWS.Venta.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\ClienteWS\" />
     <WCFMetadataStorage Include="Service References\ProductoWS\" />
-    <WCFMetadataStorage Include="Service References\VentaWS\" />
+    <WCFMetadataStorage Include="Service References\VentasWS\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ClienteWS\ClienteService.disco" />
+    <None Include="Service References\VentasWS\VentaService.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ClienteWS\configuration91.svcinfo" />
+    <None Include="Service References\VentasWS\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ClienteWS\configuration.svcinfo" />
+    <None Include="Service References\VentasWS\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ClienteWS\Reference.svcmap">
+    <None Include="Service References\VentasWS\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -164,16 +161,16 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\VentaWS\VentaService.disco" />
+    <None Include="Service References\ClienteWS\ClienteService.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\VentaWS\configuration91.svcinfo" />
+    <None Include="Service References\ClienteWS\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\VentaWS\configuration.svcinfo" />
+    <None Include="Service References\ClienteWS\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\VentaWS\Reference.svcmap">
+    <None Include="Service References\ClienteWS\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

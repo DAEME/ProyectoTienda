@@ -15,6 +15,8 @@ namespace WCFTiendaServices.Dominio
         public int nu_cantidad { get; set; }
         [DataMember]
         public decimal nu_subtotal { get; set; }
+        [DataMember]
+        public Producto co_producto { get; set; }
     }
 
     [DataContract]

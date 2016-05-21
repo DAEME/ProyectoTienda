@@ -8,6 +8,7 @@
       <generator class="increment" />
     </id>
     <many-to-one name="nu_ruc" column="nu_ruc" />
+    <!--<property name="nu_ruc" column="nu_ruc" />-->
     <property name="dt_fecha" column="dt_fecha" />
     <property name="nu_total" column="nu_total" />
   </class>

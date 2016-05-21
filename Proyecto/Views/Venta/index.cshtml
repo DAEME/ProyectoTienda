@@ -1,0 +1,447 @@
+﻿@{
+    ViewBag.Title = "index";
+    Layout = "~/Views/Shared/_LayoutMenu.cshtml";
+}
+
+<div class="col-sm-12">
+    <form id="form_Venta" class="form-horizontal mitad" action="" method="post" accept-charset="utf-8" role="form" enctype="multipart/form-data">
+        <fieldset style="margin:0px;padding-top:1px;">
+            <legend align="left" style="margin:0px;">Ventas</legend>
+            <div class="col-sm-12 Sinespacio">
+                <div class="col-sm-4 Sinespacio form-group">
+                    <label for=" lbl_Ruc_Cliente" class="col-sm-4 control-label small Title">RUC o DNI</label>
+                    <div class="col-sm-8 text-left Accordion">
+                        <input type="text" id="txtNroDoc" name="txtNroDoc" class="form-control input-sm txtNroDoc" placeholder="" />
+                    </div>
+                </div>
+                <div class="col-sm-4 form-group">
+                    <button type="button" id="btnBuscarCliente" class="btnNew">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Buscar</button>
+                </div>
+            </div>
+            <div class="col-sm-12 Sinespacio">
+                <div class="col-sm-4 Sinespacio form-group">
+                    <label for=" lbl_Cliente_Venta" class="col-sm-4 control-label small Title">Cliente</label>
+                    <div class="col-sm-8 text-left Accordion">
+                        <input type="text" id="txtCliente" name="txtCliente" class="form-control input-sm txtCliente" placeholder="" />
+                    </div>
+                </div>
+                <div class="col-sm-4 form-group">
+                    <label for=" lbl_Direccion_Cliente" class="col-sm-4 control-label small Title">Direccion</label>
+                    <div class="col-sm-8 text-left Accordion">
+                        <input type="text" id="txtDireccionCliente" name="txtDireccionCliente" class="form-control input-sm txtDireccionCliente" placeholder="" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 Sinespacio">
+                <div class="col-sm-4 form-group" style="padding-top:28px">
+                    <label class="radio-inline" style="margin-top:0px"><input type="radio" name="rb_Boleta" id="rb_Boleta" checked>Boleta</label>
+                    <label class="radio-inline"><input type="radio" name="rb_Factura" id="rb_Factura">Factura</label>
+                </div>
+            </div>
+
+            <div class="col-sm-12">
+                <br />
+                </div>
+
+
+            <div class="col-sm-12 Sinespacio">
+                <div class="col-sm-4 Sinespacio form-group">
+                    <label for=" lbl_Cod_Producto" class="col-sm-4 control-label small Title">Cod. Producto</label>
+                    <div class="col-sm-8 text-left Accordion">
+                        <input type="text" id="txtCodProd" name="txtCodProd" class="form-control input-sm txtCodProd" placeholder="" />
+                    </div>
+                </div>
+                <div class="col-sm-4 form-group">
+                    <button type="button" id="btnBuscarProducto" class="btnNew">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Buscar</button>
+                </div>
+            </div>
+            
+            
+            <fieldset style="margin:0px;padding-top:1px;">
+                <legend align="left" style="margin:0px;">Productos</legend>
+                <div class="col-sm-12 Sinespacio">
+                    <div class="table-responsive">
+                        <table class="table table-bordered tbProducto display table-condensed" id="tbProducto" width="100%">
+                            <thead id="TableHeader">
+                                <tr>
+                                    <th class="text-center">Cod. Prod</th>
+                                    <th class="text-center">Descripción</th>
+                                    <th class="text-center">Precio Unit.</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </fieldset>
+                <div class="col-sm-12 form-group">
+                    <br />
+
+                </div>
+                <div class="col-sm-12 form-group">
+
+                    <div class="col-sm-2 text-center" style="text-align:center;">
+                        <button type="button" id="btnAgregar" class="btnNew">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Agregar</button>
+                    </div>
+                    <div class="col-sm-10 text-center" style="text-align:center;">
+                    </div>
+                </div>
+                <div class="col-sm-12 form-group">
+                    <br />
+
+                </div>
+            <fieldset style="margin:0px;padding-top:1px;">
+                <legend align="left" style="margin:0px;">Productos Seleccionados</legend>
+                <div class="col-sm-12 Sinespacio">
+                    <div class="table-responsive">
+                        <table class="table table-bordered tbProductoSel display table-condensed" id="tbProductoSel" width="100%">
+                            <thead id="TableHeader">
+                                <tr>
+                                    <th class="text-center">Cod. Prod</th>
+                                    <th class="text-center">Descripción</th>
+                                    <th class="text-center">Precio Unit.</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </fieldset>
+
+            <div class="col-sm-12 form-group">
+                <br />
+
+            </div>
+            <div class="col-sm-12 form-group">
+
+                <div class="col-sm-2 text-center" style="text-align:center;">
+                    <button type="button" id="btnEnviarCaja" class="btnNew">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enviar Caja</button>
+                </div>
+                <div class="col-sm-2 text-center" style="text-align:center;">
+                    <button type="button" id="btnCancelar" class="btnNew">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cancelar</button>
+                </div>
+                <div class="col-sm-8 text-center" style="text-align:center;">
+                </div>
+            </div>
+
+            </fieldset>
+    </form>
+</div>
+
+<input type="hidden" id="hdn_NRORUC" name="hdn_IPRODUCTOID" value="0" />
+<input type="hidden" id="hdn_IPRODUCTOID" name="hdn_IPRODUCTOID" value="0" />
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        var tbProducto = $('#tbProducto').DataTable({
+            "order": [[0, "desc"]],
+            "sDom": 'T C lfrtip',
+            "pageLength": 5,
+            //"aoColumnDefs": [
+            //           { "bSortable": false, "aTargets": [1], "visible": false }
+            //],
+            "pagingType": "full_numbers",
+            "language": {
+                "sZeroRecords": "No se encontraron Registros",
+                "sInfo": "Mostrando el total de Registros",
+                "sLengthMenu": "Filas por Página",
+                "sInfoEmpty": "Mosrando 0 de 0 Registros",
+                "sInfoFiltered": "Información Filtrada",
+                "sEmptyTable": "No hay datos Disponibles para mostrar en la Tabla",
+                "sSearch": "Buscar",
+                "oPaginate": {
+                    "sFirst": "Primero",
+                    "sLast": "Último",
+                    "sNext": "Siguiente",
+                    "sPrevious": "Previo"
+                }
+            },
+            "fnCreatedRow": function (nRow, aData, iDataIndex) {
+                $(nRow).attr('id', aData[0]);
+                $(nRow).attr('desc', aData[1]);
+                $(nRow).attr('precio', aData[2]);
+                //$(nRow).attr('class', 'lstNote');
+                //$(nRow).attr('style', 'cursor:pointer');
+            },
+            "fnRowCallback": function (nRow, aData, iDataIndex, iDataIndexFull) {
+                //$('td:eq(1)', nRow).addClass('text-left font-bold');
+            }
+        });
+
+        var tbProductoSel = $('#tbProductoSel').DataTable({
+            "order": [[0, "desc"]],
+            "sDom": 'T C lfrtip',
+            "pageLength": 5,
+            //"aoColumnDefs": [
+            //           { "bSortable": false, "aTargets": [1], "visible": false }
+            //],
+            "pagingType": "full_numbers",
+            "language": {
+                "sZeroRecords": "No se encontraron Registros",
+                "sInfo": "Mostrando el total de Registros",
+                "sLengthMenu": "Filas por Página",
+                "sInfoEmpty": "Mosrando 0 de 0 Registros",
+                "sInfoFiltered": "Información Filtrada",
+                "sEmptyTable": "No hay datos Disponibles para mostrar en la Tabla",
+                "sSearch": "Buscar",
+                "oPaginate": {
+                    "sFirst": "Primero",
+                    "sLast": "Último",
+                    "sNext": "Siguiente",
+                    "sPrevious": "Previo"
+                }
+            },
+            "fnCreatedRow": function (nRow, aData, iDataIndex) {
+                //$(nRow).attr('id', aData[4]);
+                //$(nRow).attr('class', 'lstNote');
+                //$(nRow).attr('style', 'cursor:pointer');
+            },
+            "fnRowCallback": function (nRow, aData, iDataIndex, iDataIndexFull) {
+                //$('td:eq(1)', nRow).addClass('text-left font-bold');
+            }
+        });
+
+
+        $("#btnBuscarCliente").live('click', function (evt) {
+            evt.preventDefault();
+            debugger;
+            var prm = {};
+            prm.nu_ruc = $("#txtNroDoc").val();
+            //var prm = parseInt(1);//$("#txtCodProd").val();
+            debugger;
+            $.ajax({
+                url: '@Url.Action("ObtenerCliente", "Venta")',
+                type: 'POST',
+                contentType: 'application/json; charset=utf-8',
+                traditional: true,
+                data: JSON.stringify(prm),
+                async: false,
+                cancel: false,
+                success: function (data) {
+
+                    if (data != null) {
+                        $("#hdn_NRORUC").val(data.tx_nombre);
+                        $("#txtCliente").val(data.tx_nombre);
+                        $("#txtDireccionCliente").val(data.tx_direccion);
+
+                    }
+
+
+                }
+            });
+
+
+        });
+
+        $("#btnBuscarProducto").live('click', function (evt) {
+            evt.preventDefault();
+            debugger;
+            var nroRuc = $("#hdn_NRORUC").val();
+
+            if (nroRuc != 0)
+                {
+
+            var prm = {};
+            prm.co_producto = $("#txtCodProd").val();
+            //var prm = parseInt(1);//$("#txtCodProd").val();
+            debugger;
+            $.ajax({
+                url: '@Url.Action("ObtenerProducto", "Venta")',
+                type: 'POST',
+                contentType: 'application/json; charset=utf-8',
+                traditional: true,
+                data: JSON.stringify(prm),
+                async: false,
+                cancel: false,
+                success: function (data) {
+                    debugger;
+                    //if (data.objResult.iResultId == OK) {
+                    if (data != null) {
+                        debugger;
+                        tbProducto.row.add([
+                                           data.co_producto,
+                                           data.tx_descripcion,
+                                           data.nu_precio
+
+                        ]).draw();
+
+                    }
+
+
+                }
+            });
+
+            }
+
+            else
+            {
+                showdialog("E", "Venta", "WARNING : DEBE BUSCAR UN CLIENTE VALIDO ", "", "Aceptar");
+
+            }
+
+
+        });
+
+
+        $("#tbProducto tbody").on("click", "tr", function () {
+
+            if ($(this).hasClass('selected')) {
+                $(this).removeClass('selected');
+            }
+            else {
+
+                var iProdId = $(this).attr('id');
+                //var vDescripcion = $(this).attr('desc');
+                //var iPrecio = $(this).attr('precio');
+
+                //var stringArray = new Array();
+                //stringArray[0] = iProdId;
+                //stringArray[1] = vDescripcion;
+                //stringArray[2] = iPrecio;
+
+                $("#hdn_IPRODUCTOID").val(iProdId);
+
+                tbProducto.$('tr.selected').removeClass('selected');
+                $(this).addClass("selected");
+
+
+            }
+
+
+        });
+
+        $("#btnAgregar").on('click', function (evt) {
+            evt.preventDefault();
+            debugger;
+            var iProdId = $("#hdn_IPRODUCTOID").val();
+
+            if (iProdId != 0) {
+
+                $('#tbProducto tbody tr.selected').each(function () {
+
+                    var data = tbProducto.row($(this)).data();
+                    if (data != null) {
+
+                        var codProd = $.trim(data[0]);
+                        var desc = data[1];
+                        var precio = data[2];
+
+                        tbProductoSel.row.add([
+                                        codProd,
+                                        desc,
+                                        precio
+                        ]).draw();
+
+                    }
+
+                });
+
+            }
+            else {
+                showdialog("E", "Venta", "WARNING : NO SE HA SELECCIONADO NINGUN REGISTRO ", "", "Aceptar");
+            }
+
+
+        });
+
+        function GetVenta() {
+            var oVenta =
+            {
+                nu_ruc: GetCliente(),
+                Detalles: GetVentaDetalle()
+
+            }
+            return oVenta;
+
+        }
+
+        function GetCliente() {
+        
+            var oCliente = 
+                {
+                  
+                nu_ruc: $("#txtNroDoc").val()
+                }
+            return oCliente;
+             
+
+        }
+
+        function GetVentaDetalle() {
+            debugger;
+            var lVentaDet = [];
+            var rows = $("#tbProductoSel").dataTable().fnGetNodes();
+            debugger;
+
+            for (var i = 0; i < rows.length; i++) {
+                debugger;
+                var codProd = $(rows[i]).find("td:eq(0)").html();
+                //var desc = $(rows[i]).find("td:eq(1)").html();
+                debugger;
+                var precio = $(rows[i]).find("td:eq(2)").html();
+                //var precioTotal = prprecioTotalecio += precio;
+
+                var oDetalle =
+                    {
+                        co_producto: codProd,
+                        nu_cantidad: precio
+
+                    };
+                lVentaDet.push(oDetalle);
+
+
+            }
+
+            return lVentaDet;
+
+
+        }
+
+        $("#btnCancelar").on('click', function (evt) {
+            evt.preventDefault();
+
+            window.location.href = "http://localhost:3662/Operation/";
+
+
+        });
+
+        $("#btnEnviarCaja").on('click', function (evt) {
+            evt.preventDefault();
+
+            debugger;
+            var oVenta = GetVenta();
+            debugger;
+            $.ajax({
+                url: '@Url.Action("GestionarVenta", "Venta")',
+                type: 'POST',
+                contentType: 'application/json; charset=utf-8',
+                traditional: true,
+                data: JSON.stringify(oVenta),
+                async: false,
+                cancel: false,
+                success: function (data) {
+                    debugger;
+                    if (data != null) {
+                        debugger;
+                        showdialog("I", "Venta", "Grabado correctamente.", "", "Aceptar");
+
+                    }
+
+
+                }
+            });
+
+        });
+
+
+
+
+    });
+
+    </script>
+
+
+
