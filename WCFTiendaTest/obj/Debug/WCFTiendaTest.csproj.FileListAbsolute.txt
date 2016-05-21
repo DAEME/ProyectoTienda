@@ -1,0 +1,6 @@
+E:\workspace\IDR\Tienda\WCFTiendaTest\bin\Debug\WCFTiendaTest.dll.config
+E:\workspace\IDR\Tienda\WCFTiendaTest\bin\Debug\WCFTiendaTest.dll
+E:\workspace\IDR\Tienda\WCFTiendaTest\bin\Debug\WCFTiendaTest.pdb
+E:\workspace\IDR\Tienda\WCFTiendaTest\obj\Debug\WCFTiendaTest.csprojResolveAssemblyReference.cache
+E:\workspace\IDR\Tienda\WCFTiendaTest\obj\Debug\WCFTiendaTest.dll
+E:\workspace\IDR\Tienda\WCFTiendaTest\obj\Debug\WCFTiendaTest.pdb

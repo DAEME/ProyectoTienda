@@ -5,7 +5,7 @@
                    default-lazy="false">
   <class name="Producto" table="tb_producto">
     <id name="co_producto" column="co_producto">
-      <generator class="increment" />
+      <generator class="assigned" />
     </id>
     <property name="tx_descripcion" column="tx_descripcion" />
     <property name="nu_precio" column="nu_precio" />
