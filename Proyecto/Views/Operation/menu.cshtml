@@ -1,0 +1,91 @@
+﻿@{
+    ViewBag.Title = "Tienda";
+    Layout = "~/Views/Shared/_LayoutMenu.cshtml";
+}
+
+
+
+
+<section id="loginForm">
+    <div class="row margin">
+        <div class="col-sm-12">
+            <div class="panel panel-default">
+                <div id="tabs" class="panel-body">
+                    <div class="col-sm-12">
+                        <div class="row margin">
+                            <div class="col-sm-12 Titles">
+                                &nbsp;
+                                @ViewBag.Title
+                            </div>
+                        </div>
+                    </div>
+                    <fieldset style="margin:0 auto;">
+                        <form action="" method="post" accept-charset="utf-8" role="form" enctype="multipart/form-data">
+                            
+                            <div class="row margin">
+                                <div class="col-sm-6 text-center">
+                                    <button type="button" id="btnCompras" class="btnMenu">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Compras</button>
+                                </div>
+                                <div class="col-sm-6 text-center" style="text-align:center;">
+                                    <button type="button" id="btnListado" class="btnMenu">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List. Ventas</button>
+                                </div>
+                                
+                            </div>
+
+                            <div class="row margin">
+                                <div class="col-sm-6 text-center">
+                                    <button type="button" id="btnVentas" class="btnMenu">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ventas</button>
+                                </div>
+                                <div class="col-sm-6 text-center" style="text-align:center;">
+                                    <button type="button" id="btnMantenimiento" class="btnMenu">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mantenimiento</button>
+                                </div>
+                                
+                            </div>
+                        </form>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+
+    $(document).ready(function () {
+
+        $("#btnVentas").on('click', function (evt) {
+            evt.preventDefault();
+
+                window.location.href = "http://localhost:3662/Venta/Index";
+          
+            
+        });
+
+        $("#btnCompras").on('click', function (evt) {
+            evt.preventDefault();
+
+            window.location.href = "http://localhost:3662/Compra/Index";
+
+
+        });
+
+
+        $("#btnMantenimiento").on('click', function (evt) {
+            evt.preventDefault();
+
+            window.location.href = "http://localhost:3662/Producto/Index";
+
+
+        });
+
+        $("#btnListado").on('click', function (evt) {
+            evt.preventDefault();
+
+            window.location.href = "http://localhost:3662/Venta/indexListado";
+
+
+        });
+
+    });
+
+    </script>

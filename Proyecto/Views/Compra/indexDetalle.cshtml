@@ -1,0 +1,231 @@
+﻿@{
+    ViewBag.Title = "indexDetalle";
+    Layout = "~/Views/Shared/_LayoutMenu.cshtml";
+}
+
+<div class="col-sm-12">
+    <form id="form_Compra" class="form-horizontal mitad" action="" method="post" accept-charset="utf-8" role="form" enctype="multipart/form-data">
+        <fieldset style="margin:0px;padding-top:1px;">
+            <legend align="left" style="margin:0px;">Compra</legend>
+            <div class="col-sm-12 Sinespacio">
+                <div class="col-sm-7 Sinespacio form-group">
+                    <label for=" lbl_Compra_Proveedor" class="col-sm-4 control-label small Title">Sel. Proveedor</label>
+                    <div class="col-sm-8 Sinespacio form-group">
+                        <select id="cbo_Proveedor" name="cbo_Proveedor" class="form-control input-sm">
+                            <option value="0">-- Select --</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="col-sm-5 form-group">
+                    <label for="lbl_Fecha_" class="col-sm-4 control-label small Title">Fecha : "@DateTime.Now.ToString()"</label>
+                    
+                </div>
+            </div>
+
+            <div class="col-sm-12 Sinespacio">
+                <div class="col-sm-4 Sinespacio form-group">
+                    <label for=" lbl_Descripcion" class="col-sm-4 control-label small Title">Descripcion</label>
+                    <div class="col-sm-8 text-left Accordion">
+                        <input type="text" id="txtDescripcion" name="txtDescripcion" class="form-control input-sm txtDescripcion" placeholder="" />
+                    </div>
+                </div>
+                <div class="col-sm-4 form-group">
+                    <label for=" lbl_Ruc" class="col-sm-4 control-label small Title">Ruc</label>
+                    <div class="col-sm-8 text-left Accordion">
+                        <input type="text" id="txtRuc" name="txtRuc" class="form-control input-sm txtRuc" placeholder="" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 Sinespacio">
+                <div class="col-sm-4 Sinespacio form-group">
+                    <label for=" lbl_Cliente_Venta" class="col-sm-4 control-label small Title">Dirección</label>
+                    <div class="col-sm-8 text-left Accordion">
+                        <input type="text" id="txtDireccion" name="txtDireccion" class="form-control input-sm txtDireccion" placeholder="" />
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="col-sm-12">
+                <br />
+            </div>
+
+            <div class="col-sm-12 Sinespacio">
+                <div class="col-sm-4 form-group" style="padding-top:28px">
+                    <label class="radio-inline" style="margin-top:0px"><input type="radio" name="rb_Soles" id="rb_Soles" checked>Soles</label>
+                    <label class="radio-inline"><input type="radio" name="rb_Dolares" id="rb_Dolares">Dólares</label>
+                </div>
+            </div>
+
+            <div class="col-sm-12">
+                <br />
+            </div>
+
+
+            <fieldset style="margin:0px;padding-top:1px;">
+                <legend align="left" style="margin:0px;">Detalle</legend>
+
+                <div class="col-sm-12 Sinespacio">
+                    <div class="col-sm-4 Sinespacio form-group">
+                        <label for=" lbl_DescripcionDetalle" class="col-sm-4 control-label small Title">Descripcion</label>
+                        <div class="col-sm-8 text-left Accordion">
+                            <input type="text" id="txtDescripcionDet" name="txtDescripcionDet" class="form-control input-sm txtDescripcionDet" placeholder="" />
+                        </div>
+                    </div>
+                    <div class="col-sm-4 form-group">
+                        <label for=" lbl_Ruc" class="col-sm-4 control-label small Title">Cantidad</label>
+                        <div class="col-sm-8 text-left Accordion">
+                            <input type="text" id="txtCantidad" name="txtCantidad" class="form-control input-sm txtCantidad" placeholder="" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 Sinespacio">
+                    <div class="col-sm-4 Sinespacio form-group">
+                        <label for=" lbl_Precio" class="col-sm-4 control-label small Title">Precio</label>
+                        <div class="col-sm-8 text-left Accordion">
+                            <input type="text" id="txtPrecio" name="txtPrecio" class="form-control input-sm txtPrecio" placeholder="" />
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-sm-12">
+                    <br />
+                </div>
+
+                <div class="col-sm-12 form-group">
+
+                    <div class="col-sm-2 text-center" style="text-align:center;">
+                        <button type="button" id="btnAgregarItem" class="btnNew">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Agregar item</button>
+                    </div>
+                    <div class="col-sm-10 text-center" style="text-align:center;">
+                    </div>
+                </div>
+
+                <div class="col-sm-12 form-group">
+                    <br />
+
+                </div>
+
+                <fieldset style="margin:0px;padding-top:1px;">
+                    <legend align="left" style="margin:0px;">Detalle Item</legend>
+                    <div class="col-sm-12 Sinespacio">
+                        <div class="table-responsive">
+                            <table class="table table-bordered tbDetalleItem display table-condensed" id="tbDetalleItem" width="100%">
+                                <thead id="TableHeader">
+                                    <tr>
+                                        <th class="text-center">Numero</th>
+                                        <th class="text-center">Descripción</th>
+                                        <th class="text-center">Precio Unit.</th>
+                                        <th class="text-center">Cantidad</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <div class="col-sm-12 form-group">
+                    <br />
+
+                </div>
+
+                <div class="col-sm-12 Sinespacio">
+                    <div class="col-sm-3 form-group">
+                        <div class="col-sm-4 form-group">
+                            <button type="button" id="btnAdjuntar" class="btnNew">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adjuntar Cotizacion</button>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 form-group">
+                        <button type="button" id="btnCrearOC" class="btnNew">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Crear OC</button>
+                    </div>
+                </div>
+
+                </fieldset>
+
+
+            </fieldset>
+    </form>
+</div>
+
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        var tbDetalleItem = $('#tbDetalleItem').DataTable({
+            "order": [[0, "desc"]],
+            "sDom": 'T C lfrtip',
+            "pageLength": 5,
+            //"aoColumnDefs": [
+            //           { "bSortable": false, "aTargets": [1], "visible": false }
+            //],
+            "pagingType": "full_numbers",
+            "language": {
+                "sZeroRecords": "No se encontraron Registros",
+                "sInfo": "Mostrando el total de Registros",
+                "sLengthMenu": "Filas por Página",
+                "sInfoEmpty": "Mosrando 0 de 0 Registros",
+                "sInfoFiltered": "Información Filtrada",
+                "sEmptyTable": "No hay datos Disponibles para mostrar en la Tabla",
+                "sSearch": "Buscar",
+                "oPaginate": {
+                    "sFirst": "Primero",
+                    "sLast": "Último",
+                    "sNext": "Siguiente",
+                    "sPrevious": "Previo"
+                }
+            },
+            "fnCreatedRow": function (nRow, aData, iDataIndex) {
+                //$(nRow).attr('id', aData[4]);
+                //$(nRow).attr('class', 'lstNote');
+                //$(nRow).attr('style', 'cursor:pointer');
+            },
+            "fnRowCallback": function (nRow, aData, iDataIndex, iDataIndexFull) {
+                //$('td:eq(1)', nRow).addClass('text-left font-bold');
+            }
+        });
+
+        $("#btnCrearOC").live('click', function (evt) {
+            evt.preventDefault();
+            var prm = {};
+            debugger;
+            prm.iProd = $("#txtCodProd").val();
+            $.ajax({
+                url: '@Url.Action("ObtenerProducto", "Compra")',
+                type: 'POST',
+                contentType: 'application/json; charset=utf-8',
+                traditional: true,
+                data: JSON.stringify(prm),
+                async: false,
+                cancel: false,
+                success: function (data) {
+                    debugger;
+                    //if (data.objResult.iResultId == OK) {
+                    if (data.oProducto != null) {
+                        debugger;
+                        tbProducto.row.add([
+                                           data.oProducto.co_producto,
+                                           row.oProducto.tx_descripcion,
+                                           row.oProducto.nu_precio
+
+                        ]).draw();
+
+                    }
+
+
+                }
+            });
+
+
+        });
+
+    });
+
+
+
+</script>

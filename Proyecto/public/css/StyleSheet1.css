@@ -1,0 +1,100 @@
+﻿ 
+/* Nuestro nav con id #menu lo flotaremos a la derecha*/
+#menu{float: right;}   
+
+    /* Quitamos estilos por defecto de el tag UL */
+    #menu ul{
+        list-style: none;
+        font-size: 14px;
+    }
+        
+        /* Centramos y ponemos los textos en mayuscula */
+        #menu li{
+           display: block;
+           float: left;
+           text-transform: uppercase;
+           text-align: center;
+        }
+            
+            /* Damos estilo a nuestros enlaces */
+            #menu li a{
+                display: block;
+                color: #fff;
+                text-decoration: none;
+                height: 60px;
+                line-height: 60px;
+                padding: 0 26px;
+            }
+            #menu li a:hover{
+                background: #151a1e;
+                color: #ffc700;
+            }
+    
+    /* Estilos #nav-mobile y lo ocultamos */
+    #nav-mobile{
+        display: none;
+        background: url(img/icon/nav.png) no-repeat center center;
+        float: right;
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        right: 0;
+        top:0;
+        opacity: .6;
+
+    }   
+        /* Agregaremos esta clase a #nav-mobile, cuando el menu mobile haya sido desplegado */
+        #nav-mobile.nav-active{
+            opacity: 1;
+        }
+ 
+
+@media only screen and (max-width: 768px) {
+        
+    h2{font-size: 40px;}
+    
+    /* mostramos #nav-mobile */
+    #nav-mobile{ display: block; }
+
+    /* Fijamos nuestro nav en 100% ancho y dejamos de flotarlo  */
+    #menu{
+        width: 100%;
+        float: none;
+        padding-top: 60px;
+    }
+        /* Convertimos nuestra lista de enlaces en un menú horizontal */
+        #menu ul{
+            -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.5);
+            -moz-box-shadow: 0 1px 2px rgba(0,0,0,.5);
+            box-shadow: 0 1px 2px rgba(0,0,0,.5);
+            max-height: 0;
+            overflow: hidden;
+        }
+            /* estilos para los LI del menu */
+            #menu li{
+                background: #33363b;
+                border-bottom: 1px solid #282b30;
+                float: none;
+            }
+
+            /* Quitamos el borde del ultimo item del menú */
+            #menu li:last-child{ border-bottom: 0;}
+                #menu li a{
+                    padding: 15px 0;
+                    height: auto;
+                    line-height: normal;
+                }
+                #menu li a:hover{background:#2a2d33}
+
+        /* Agregamos una animación al despligue del menú */
+        #menu ul.open-menu{
+            max-height: 400px;
+            -webkit-transition: max-height .4s;
+            -moz-transition: max-height .4s;
+            -ms-transition: max-height .4s;
+            -o-transition: max-height .4s;
+            transition: max-height .4s;
+        }
+}
+
+

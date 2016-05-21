@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=8; IE=9; IE=10" />
+    <title>@ViewBag.Title</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+
+    <link href="~/public/css/bootstrap.css" rel="stylesheet" />
+
+    <link href="~/public/css/ui-lightness/jquery-ui-1.9.2.custom.css" rel="stylesheet" />
+    <link href="~/public/css/dataTables.bootstrap.css" rel="stylesheet" />
+    <link href="~/public/css/Site.css" rel="stylesheet" />
+    <link href="~/public/css/styles.css" rel="stylesheet" />
+    <link href="~/public/css/style.css" rel="stylesheet" />
+    <link href="~/public/css/style02.css" rel="stylesheet" />
+    <link href="~/public/css/datepicker.css" rel="stylesheet" />
+    <link href="~/public/css/bootstrap-datetimepicker.css" rel="stylesheet" />
+    <link href="~/public/css/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/public/css/jquery.tree.css" rel="stylesheet" />
+
+    <link href="~/public/js/bubbletip/bubbletip.css" rel="stylesheet" />
+    <link href="~/public/css/buttons.dataTables.min.css" rel="stylesheet" />
+
+    <script src="~/public/js/jquery.min.js"></script>
+    <script src="~/public/js/jquery-ui-1.9.2.custom.js"></script>
+    <script src="~/public/js/datepicker/bootstrap-datepicker.js"></script>
+
+    <script src="~/public/js/bootstrap-datetimepicker.js"></script>
+    <script src="~/public/js/jquery.tree.js"></script>
+
+    <script src="~/public/js/jQuery.bubbletip-1.0.6.js"></script>
+    <script src="~/public/js/report/ExportExcel.js"></script>
+
+   
+
+</head>
+<body>
+
+    <div class="page">
+        <div id="header">
+            <div id="container">
+                <div id="overlay">
+                    <div id="title">
+                        <table>
+                            <tr>
+                                <td rowspan="2"><img src="~/public/img/Logo_Tonnjes.png" width="70px" /></td>
+                                @*<td><h1>@HttpContext.Current.Session["HeaderCustomer"]</h1></td>*@
+                                <td><h1>FASTCODE</h1></td>
+                            </tr>
+                            <tr>
+                                @*<td ><h1>@HttpContext.Current.Session["HeaderTitle"]</h1></td>*@
+                                <td><h1>PROYECTO TIENDA</h1></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="nav">
+            <div id="mainmenu">
+                <nav id="CreateMenu">
+
+                </nav>
+            </div>
+        </div>
+
+        <div id="main" class="row">
+
+            <div class="col-sm-12">
+                @RenderBody()
+            </div>
+
+        </div>
+
+        <footer id="footer" class="text-center">
+            All rights reserved <a style="cursor:pointer">SISTEMA TIENDA</a>
+
+        </footer>
+    </div>
+
+
+
+    <script src="~/public/js/bootstrap.js"></script>
+    <script src="~/public/js/dataTables/jquery.dataTables.js"></script>
+    <script src="~/public/js/dataTables/dataTables.bootstrap.js"></script>
+    <script src="~/public/js/site.js"></script>
+    <script src="~/public/js/jquery.numeric.js"></script>
+    <script src="~/public/js/jquery.combobox.js"></script>
+    <script src="~/public/js/numericInput.min.js"></script>
+    <script src="~/public/js/bootstrapValidator.js"></script>
+    <link href="~/public/css/bootstrapValidator.css" rel="stylesheet" />
+
+    <div id="msg-dialog">
+
+    </div>
+</body>
+</html>
+
+<script type="text/javascript">
+
+
+    var ww = document.body.clientWidth;
+
+    $(document).ready(function () {
+
+
+    });
+
+
+</script>
