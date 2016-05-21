@@ -15,7 +15,7 @@ namespace WCFTiendaServices
     {
         [OperationContract]
         [FaultContract(typeof(ClienteInexistenteError))]
-        Venta Vender(string nu_ruc, List<VentaDetalle> items);
+        Venta Vender(string nu_ruc, List<Item> items);
 
         [OperationContract]
         ICollection<Venta> ListarVentas();

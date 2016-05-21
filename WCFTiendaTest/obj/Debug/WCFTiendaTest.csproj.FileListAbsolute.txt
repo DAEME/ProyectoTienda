@@ -4,3 +4,4 @@ E:\workspace\IDR\Tienda\WCFTiendaTest\bin\Debug\WCFTiendaTest.pdb
 E:\workspace\IDR\Tienda\WCFTiendaTest\obj\Debug\WCFTiendaTest.csprojResolveAssemblyReference.cache
 E:\workspace\IDR\Tienda\WCFTiendaTest\obj\Debug\WCFTiendaTest.dll
 E:\workspace\IDR\Tienda\WCFTiendaTest\obj\Debug\WCFTiendaTest.pdb
+E:\workspace\IDR\Tienda\WCFTiendaTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll

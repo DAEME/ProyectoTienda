@@ -17,7 +17,7 @@ namespace WCFTiendaServices
         private VentaDAO ventaDAO = new VentaDAO();
         private VentaDetalleDAO ventaDetalleDAO = new VentaDetalleDAO();
 
-        public Venta Vender(string nu_ruc, List<VentaDetalle> items)
+        public Venta Vender(string nu_ruc, List<Item> items)
         {
             
             Cliente cliente = clienteDAO.Obtener(nu_ruc);
@@ -41,7 +41,7 @@ namespace WCFTiendaServices
             Producto producto = null;
             VentaDetalle ventaDetalle = null;
             decimal total = 0m;
-            foreach (VentaDetalle item in items)
+            foreach (Item item in items)
             {
                 producto = productoDAO.Obtener(Convert.ToInt32(item.co_producto));
                 ventaDetalle = new VentaDetalle()
