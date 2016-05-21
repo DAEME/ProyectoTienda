@@ -11,7 +11,7 @@ namespace WCFTiendaServices
 {
     [ServiceContract]
     public interface IProductoService
-    {
+    {//
         [FaultContract(typeof(ClienteInexistenteError))]
         [OperationContract]
         Producto CrearProducto(Producto productoACrear); 
