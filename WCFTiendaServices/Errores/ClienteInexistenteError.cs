@@ -6,12 +6,12 @@ using System.Web;
 
 namespace WCFTiendaServices.Errores
 {
-    [DataContract]
+    //[DataContract]
     public class ClienteInexistenteError
     {
-        [DataMember]
+        //[DataMember]
         public int CodigoError { get; set; }
-        [DataMember]
+        //[DataMember]
         public string MensajeError { get; set; }
     }
 }

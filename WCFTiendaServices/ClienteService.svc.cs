@@ -10,8 +10,6 @@ using WCFTiendaServices.Persistencia;
 
 namespace WCFTiendaServices
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "ClienteService" in code, svc and config file together.
-    // NOTE: In order to launch WCF Test Client for testing this service, please select ClienteService.svc or ClienteService.svc.cs at the Solution Explorer and start debugging.
     public class ClienteService : IClienteService
     {
         private ClienteDAO clienteDAO = new ClienteDAO();
@@ -41,10 +39,10 @@ namespace WCFTiendaServices
             return clienteDAO.Modificar(clienteAModificar);
         }
 
-              public void EliminarCliente(Cliente clienteAEliminar)
-              {
-                   clienteDAO.Eliminar(clienteAEliminar);
-              }
+        public void EliminarCliente(Cliente clienteAEliminar)
+        {
+            clienteDAO.Eliminar(clienteAEliminar);
+        }
       
 
       /*  public void EliminarCliente(string nu_ruc)

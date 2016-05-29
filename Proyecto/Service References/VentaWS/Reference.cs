@@ -15,163 +15,9 @@ namespace Proyecto.VentaWS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="VentaDetalle", Namespace="http://schemas.datacontract.org/2004/07/WCFTiendaServices.Dominio")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Item", Namespace="http://schemas.datacontract.org/2004/07/WCFTiendaServices.Dominio")]
     [System.SerializableAttribute()]
-    public partial class VentaDetalle : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Proyecto.VentaWS.VentaDetallePK PkField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Proyecto.VentaWS.Producto co_productoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int nu_cantidadField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal nu_subtotalField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Proyecto.VentaWS.VentaDetallePK Pk {
-            get {
-                return this.PkField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PkField, value) != true)) {
-                    this.PkField = value;
-                    this.RaisePropertyChanged("Pk");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Proyecto.VentaWS.Producto co_producto {
-            get {
-                return this.co_productoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.co_productoField, value) != true)) {
-                    this.co_productoField = value;
-                    this.RaisePropertyChanged("co_producto");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int nu_cantidad {
-            get {
-                return this.nu_cantidadField;
-            }
-            set {
-                if ((this.nu_cantidadField.Equals(value) != true)) {
-                    this.nu_cantidadField = value;
-                    this.RaisePropertyChanged("nu_cantidad");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal nu_subtotal {
-            get {
-                return this.nu_subtotalField;
-            }
-            set {
-                if ((this.nu_subtotalField.Equals(value) != true)) {
-                    this.nu_subtotalField = value;
-                    this.RaisePropertyChanged("nu_subtotal");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="VentaDetallePK", Namespace="http://schemas.datacontract.org/2004/07/WCFTiendaServices.Dominio")]
-    [System.SerializableAttribute()]
-    public partial class VentaDetallePK : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Proyecto.VentaWS.Producto co_productoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int nu_ventaField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Proyecto.VentaWS.Producto co_producto {
-            get {
-                return this.co_productoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.co_productoField, value) != true)) {
-                    this.co_productoField = value;
-                    this.RaisePropertyChanged("co_producto");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int nu_venta {
-            get {
-                return this.nu_ventaField;
-            }
-            set {
-                if ((this.nu_ventaField.Equals(value) != true)) {
-                    this.nu_ventaField = value;
-                    this.RaisePropertyChanged("nu_venta");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Producto", Namespace="http://schemas.datacontract.org/2004/07/WCFTiendaServices.Dominio")]
-    [System.SerializableAttribute()]
-    public partial class Producto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class Item : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -180,10 +26,7 @@ namespace Proyecto.VentaWS {
         private int co_productoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal nu_precioField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string tx_descripcionField;
+        private int nu_cantidadField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -209,27 +52,14 @@ namespace Proyecto.VentaWS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal nu_precio {
+        public int nu_cantidad {
             get {
-                return this.nu_precioField;
+                return this.nu_cantidadField;
             }
             set {
-                if ((this.nu_precioField.Equals(value) != true)) {
-                    this.nu_precioField = value;
-                    this.RaisePropertyChanged("nu_precio");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string tx_descripcion {
-            get {
-                return this.tx_descripcionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.tx_descripcionField, value) != true)) {
-                    this.tx_descripcionField = value;
-                    this.RaisePropertyChanged("tx_descripcion");
+                if ((this.nu_cantidadField.Equals(value) != true)) {
+                    this.nu_cantidadField = value;
+                    this.RaisePropertyChanged("nu_cantidad");
                 }
             }
         }
@@ -254,7 +84,7 @@ namespace Proyecto.VentaWS {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Proyecto.VentaWS.VentaDetalle[] DetallesField;
+        private Proyecto.VentaWS.Item[] ItemsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime dt_fechaField;
@@ -279,14 +109,14 @@ namespace Proyecto.VentaWS {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Proyecto.VentaWS.VentaDetalle[] Detalles {
+        public Proyecto.VentaWS.Item[] Items {
             get {
-                return this.DetallesField;
+                return this.ItemsField;
             }
             set {
-                if ((object.ReferenceEquals(this.DetallesField, value) != true)) {
-                    this.DetallesField = value;
-                    this.RaisePropertyChanged("Detalles");
+                if ((object.ReferenceEquals(this.ItemsField, value) != true)) {
+                    this.ItemsField = value;
+                    this.RaisePropertyChanged("Items");
                 }
             }
         }
@@ -497,10 +327,10 @@ namespace Proyecto.VentaWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVentaService/Vender", ReplyAction="http://tempuri.org/IVentaService/VenderResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(Proyecto.VentaWS.ClienteInexistenteError), Action="http://tempuri.org/IVentaService/VenderClienteInexistenteErrorFault", Name="ClienteInexistenteError", Namespace="http://schemas.datacontract.org/2004/07/WCFTiendaServices.Errores")]
-        Proyecto.VentaWS.Venta Vender(string nu_ruc, Proyecto.VentaWS.VentaDetalle[] items);
+        Proyecto.VentaWS.Venta Vender(string nu_ruc, Proyecto.VentaWS.Item[] items);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVentaService/Vender", ReplyAction="http://tempuri.org/IVentaService/VenderResponse")]
-        System.Threading.Tasks.Task<Proyecto.VentaWS.Venta> VenderAsync(string nu_ruc, Proyecto.VentaWS.VentaDetalle[] items);
+        System.Threading.Tasks.Task<Proyecto.VentaWS.Venta> VenderAsync(string nu_ruc, Proyecto.VentaWS.Item[] items);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVentaService/ListarVentas", ReplyAction="http://tempuri.org/IVentaService/ListarVentasResponse")]
         Proyecto.VentaWS.Venta[] ListarVentas();
@@ -536,11 +366,11 @@ namespace Proyecto.VentaWS {
                 base(binding, remoteAddress) {
         }
         
-        public Proyecto.VentaWS.Venta Vender(string nu_ruc, Proyecto.VentaWS.VentaDetalle[] items) {
+        public Proyecto.VentaWS.Venta Vender(string nu_ruc, Proyecto.VentaWS.Item[] items) {
             return base.Channel.Vender(nu_ruc, items);
         }
         
-        public System.Threading.Tasks.Task<Proyecto.VentaWS.Venta> VenderAsync(string nu_ruc, Proyecto.VentaWS.VentaDetalle[] items) {
+        public System.Threading.Tasks.Task<Proyecto.VentaWS.Venta> VenderAsync(string nu_ruc, Proyecto.VentaWS.Item[] items) {
             return base.Channel.VenderAsync(nu_ruc, items);
         }
         
