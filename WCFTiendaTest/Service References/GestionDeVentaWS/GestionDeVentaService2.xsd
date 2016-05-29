@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WCFTiendaServices.Dominio" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WCFTiendaServices.Dominio" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:Item" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfItem" nillable="true" type="tns:ArrayOfItem" />
+  <xs:complexType name="Item">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="co_producto" type="xs:int" />
+      <xs:element minOccurs="0" name="nu_cantidad" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Item" nillable="true" type="tns:Item" />
+  <xs:complexType name="Venta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Detalles" nillable="true" type="tns:ArrayOfVentaDetalle" />
+      <xs:element minOccurs="0" name="dt_fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="nu_ruc" nillable="true" type="tns:Cliente" />
+      <xs:element minOccurs="0" name="nu_total" type="xs:decimal" />
+      <xs:element minOccurs="0" name="nu_venta" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Venta" nillable="true" type="tns:Venta" />
   <xs:complexType name="ArrayOfVentaDetalle">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="VentaDetalle" nillable="true" type="tns:VentaDetalle" />
@@ -30,16 +53,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Producto" nillable="true" type="tns:Producto" />
-  <xs:complexType name="Venta">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Detalles" nillable="true" type="tns:ArrayOfVentaDetalle" />
-      <xs:element minOccurs="0" name="dt_fecha" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="nu_ruc" nillable="true" type="tns:Cliente" />
-      <xs:element minOccurs="0" name="nu_total" type="xs:decimal" />
-      <xs:element minOccurs="0" name="nu_venta" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="Venta" nillable="true" type="tns:Venta" />
   <xs:complexType name="Cliente">
     <xs:sequence>
       <xs:element minOccurs="0" name="nu_ruc" nillable="true" type="xs:string" />

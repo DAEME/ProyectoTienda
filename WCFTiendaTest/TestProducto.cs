@@ -14,7 +14,7 @@ namespace WCFTiendaTest
             {
                 co_producto = 6,
                 tx_descripcion = "teclado",
-                nu_precio = 60
+                nu_precio = 60m
             });
             Assert.AreEqual(6, productoCreado.co_producto);
             Assert.AreEqual("teclado", productoCreado.tx_descripcion);
@@ -29,9 +29,9 @@ namespace WCFTiendaTest
             {
                 ProductoWS.Producto productoCreado = proxy.CrearProducto(new ProductoWS.Producto()
                 {
-                    co_producto = 7,
-                    tx_descripcion = "monitor",
-                    nu_precio = 350
+                    co_producto = 6,
+                    tx_descripcion = "teclado",
+                    nu_precio = 60m
                 });
             }
             catch (System.ServiceModel.FaultException<ProductoWS.ClienteInexistenteError> error)
@@ -50,7 +50,7 @@ namespace WCFTiendaTest
             {
                 co_producto = 8,
                 tx_descripcion = "CPU",
-                nu_precio = 650
+                nu_precio = 650m
             });
             proxy.EliminarProducto(productoCreado);
             try
