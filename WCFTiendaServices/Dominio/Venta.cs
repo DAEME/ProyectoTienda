@@ -22,6 +22,6 @@ namespace WCFTiendaServices.Dominio
         public decimal nu_total { get; set; }
 
         [DataMember]
-        public IList<VentaDetalle> Detalles { get; set; }
+        public IList<Item> Items { get; set; }
     }
 }

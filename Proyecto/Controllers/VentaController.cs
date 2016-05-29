@@ -44,7 +44,7 @@ namespace Proyecto.Controllers
         {
             var objPrx = new VentaWS.VentaServiceClient();
 
-            VentaWS.Venta oVenta = objPrx.Vender(objVenta.nu_ruc.nu_ruc, objVenta.Detalles);
+            VentaWS.Venta oVenta = objPrx.Vender(objVenta.nu_ruc.nu_ruc, objVenta.Items);
             return Json(oVenta, JsonRequestBehavior.AllowGet);
         }
 

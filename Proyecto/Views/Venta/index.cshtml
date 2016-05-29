@@ -9,7 +9,7 @@
             <legend align="left" style="margin:0px;">Ventas</legend>
             <div class="col-sm-12 Sinespacio">
                 <div class="col-sm-4 Sinespacio form-group">
-                    <label for=" lbl_Ruc_Cliente" class="col-sm-4 control-label small Title">RUC o DNI</label>
+                    <label for="lbl_Ruc_Cliente" class="col-sm-4 control-label small Title">RUC o DNI</label>
                     <div class="col-sm-8 text-left Accordion">
                         <input type="text" id="txtNroDoc" name="txtNroDoc" class="form-control input-sm txtNroDoc" placeholder="" />
                     </div>
@@ -20,13 +20,13 @@
             </div>
             <div class="col-sm-12 Sinespacio">
                 <div class="col-sm-4 Sinespacio form-group">
-                    <label for=" lbl_Cliente_Venta" class="col-sm-4 control-label small Title">Cliente</label>
+                    <label for=lbl_Cliente_Venta" class="col-sm-4 control-label small Title">Cliente</label>
                     <div class="col-sm-8 text-left Accordion">
                         <input type="text" id="txtCliente" name="txtCliente" class="form-control input-sm txtCliente" placeholder="" />
                     </div>
                 </div>
                 <div class="col-sm-4 form-group">
-                    <label for=" lbl_Direccion_Cliente" class="col-sm-4 control-label small Title">Direccion</label>
+                    <label for="lbl_Direccion_Cliente" class="col-sm-4 control-label small Title">Direccion</label>
                     <div class="col-sm-8 text-left Accordion">
                         <input type="text" id="txtDireccionCliente" name="txtDireccionCliente" class="form-control input-sm txtDireccionCliente" placeholder="" />
                     </div>
@@ -46,7 +46,7 @@
 
             <div class="col-sm-12 Sinespacio">
                 <div class="col-sm-4 Sinespacio form-group">
-                    <label for=" lbl_Cod_Producto" class="col-sm-4 control-label small Title">Cod. Producto</label>
+                    <label for="lbl_Cod_Producto" class="col-sm-4 control-label small Title">Cod. Producto</label>
                     <div class="col-sm-8 text-left Accordion">
                         <input type="text" id="txtCodProd" name="txtCodProd" class="form-control input-sm txtCodProd" placeholder="" />
                     </div>
@@ -351,7 +351,7 @@
             var oVenta =
             {
                 nu_ruc: GetCliente(),
-                Detalles: GetVentaDetalle()
+                Items: GetVentaDetalle()
 
             }
             return oVenta;
@@ -387,7 +387,7 @@
                 var oDetalle =
                     {
                         co_producto: codProd,
-                        nu_cantidad: precio
+                        nu_cantidad: i
 
                     };
                 lVentaDet.push(oDetalle);

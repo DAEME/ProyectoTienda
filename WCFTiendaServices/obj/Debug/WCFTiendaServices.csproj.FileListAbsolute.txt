@@ -79,3 +79,4 @@ C:\Users\Sebastian\Source\Repos\ProyectoTienda\WCFTiendaServices\bin\Microsoft.A
 C:\Users\Sebastian\Source\Repos\ProyectoTienda\WCFTiendaServices\bin\Microsoft.ApplicationInsights.xml
 C:\Users\Sebastian\Source\Repos\ProyectoTienda\WCFTiendaServices\obj\Debug\WCFTiendaServices.dll
 C:\Users\Sebastian\Source\Repos\ProyectoTienda\WCFTiendaServices\obj\Debug\WCFTiendaServices.pdb
+C:\Users\Sebastian\Source\Repos\ProyectoTienda\WCFTiendaServices\obj\Debug\WCFTiendaServices.csprojResolveAssemblyReference.cache
