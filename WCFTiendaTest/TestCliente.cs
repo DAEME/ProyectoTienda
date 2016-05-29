@@ -29,9 +29,9 @@ namespace WCFTiendaTest
             {
                 ClienteWS.Cliente clienteCreado = proxy.CrearCliente(new ClienteWS.Cliente()
                 {
-                    nu_ruc = "45678912365",
-                    tx_nombre = "SAC",
-                    tx_direccion = "av peru"
+                    nu_ruc = "98765432112",
+                    tx_nombre = "Kimberlita",
+                    tx_direccion = "Av Tarapaca"
                 });
             }
             catch (System.ServiceModel.FaultException<ClienteWS.ClienteInexistenteError> error)
@@ -48,14 +48,14 @@ namespace WCFTiendaTest
             ClienteWS.ClienteServiceClient proxy = new ClienteWS.ClienteServiceClient();
             ClienteWS.Cliente productoCreado = proxy.CrearCliente(new ClienteWS.Cliente()
             {
-                nu_ruc = "12345678987",
-                tx_nombre = "name1",
-                tx_direccion = "dir1"
+                nu_ruc = "12457889458",
+                tx_nombre = "Eric Rodrich",
+                tx_direccion = "Av San Juan"
             });
             proxy.EliminarCliente(productoCreado);
             try
             {
-                proxy.ObtenerCliente("12345678987");
+                proxy.ObtenerCliente("12457889458");
             }
             catch (System.ServiceModel.FaultException<ClienteWS.ClienteInexistenteError> error)
             {

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8438d3cd-8721-4575-ba9f-3447e3257458" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:20000/GestionDeVentaService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="GestionDeVentaService.wsdl" MetadataType="Wsdl" ID="d992f7a6-3fa3-46e2-bcb3-850c08ed7f7f" SourceId="1" SourceUrl="http://localhost:20000/GestionDeVentaService.svc?wsdl" />
+    <MetadataFile FileName="GestionDeVentaService.disco" MetadataType="Disco" ID="ca4f3fbe-7797-4cb7-895e-d1dd0c9caf8c" SourceId="1" SourceUrl="http://localhost:20000/GestionDeVentaService.svc?disco" />
+    <MetadataFile FileName="GestionDeVentaService.xsd" MetadataType="Schema" ID="cc3f4cf0-f204-494c-b839-21a8dc5724d7" SourceId="1" SourceUrl="http://localhost:20000/GestionDeVentaService.svc?xsd=xsd0" />
+    <MetadataFile FileName="GestionDeVentaService1.xsd" MetadataType="Schema" ID="a60eaf80-9fe1-476f-922e-e85c82369647" SourceId="1" SourceUrl="http://localhost:20000/GestionDeVentaService.svc?xsd=xsd3" />
+    <MetadataFile FileName="GestionDeVentaService2.xsd" MetadataType="Schema" ID="34cd0d61-8591-42bb-8310-dd4f2ee3601d" SourceId="1" SourceUrl="http://localhost:20000/GestionDeVentaService.svc?xsd=xsd2" />
+    <MetadataFile FileName="GestionDeVentaService3.xsd" MetadataType="Schema" ID="91ab7b03-13a7-47eb-abd8-98fd90e8b69a" SourceId="1" SourceUrl="http://localhost:20000/GestionDeVentaService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
