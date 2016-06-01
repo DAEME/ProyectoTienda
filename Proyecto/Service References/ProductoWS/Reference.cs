@@ -90,83 +90,21 @@ namespace Proyecto.ProductoWS {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ClienteInexistenteError", Namespace="http://schemas.datacontract.org/2004/07/WCFTiendaServices.Errores")]
-    [System.SerializableAttribute()]
-    public partial class ClienteInexistenteError : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int CodigoErrorField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MensajeErrorField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int CodigoError {
-            get {
-                return this.CodigoErrorField;
-            }
-            set {
-                if ((this.CodigoErrorField.Equals(value) != true)) {
-                    this.CodigoErrorField = value;
-                    this.RaisePropertyChanged("CodigoError");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string MensajeError {
-            get {
-                return this.MensajeErrorField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MensajeErrorField, value) != true)) {
-                    this.MensajeErrorField = value;
-                    this.RaisePropertyChanged("MensajeError");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ProductoWS.IProductoService")]
     public interface IProductoService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductoService/CrearProducto", ReplyAction="http://tempuri.org/IProductoService/CrearProductoResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(Proyecto.ProductoWS.ClienteInexistenteError), Action="http://tempuri.org/IProductoService/CrearProductoClienteInexistenteErrorFault", Name="ClienteInexistenteError", Namespace="http://schemas.datacontract.org/2004/07/WCFTiendaServices.Errores")]
         Proyecto.ProductoWS.Producto CrearProducto(Proyecto.ProductoWS.Producto productoACrear);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductoService/CrearProducto", ReplyAction="http://tempuri.org/IProductoService/CrearProductoResponse")]
         System.Threading.Tasks.Task<Proyecto.ProductoWS.Producto> CrearProductoAsync(Proyecto.ProductoWS.Producto productoACrear);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductoService/ObtenerProducto", ReplyAction="http://tempuri.org/IProductoService/ObtenerProductoResponse")]
-        Proyecto.ProductoWS.Producto ObtenerProducto(int co_producto);
+        Proyecto.ProductoWS.Producto ObtenerProducto(string codigo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductoService/ObtenerProducto", ReplyAction="http://tempuri.org/IProductoService/ObtenerProductoResponse")]
-        System.Threading.Tasks.Task<Proyecto.ProductoWS.Producto> ObtenerProductoAsync(int co_producto);
+        System.Threading.Tasks.Task<Proyecto.ProductoWS.Producto> ObtenerProductoAsync(string codigo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductoService/ModificarProducto", ReplyAction="http://tempuri.org/IProductoService/ModificarProductoResponse")]
         Proyecto.ProductoWS.Producto ModificarProducto(Proyecto.ProductoWS.Producto productoAModificar);
@@ -175,10 +113,10 @@ namespace Proyecto.ProductoWS {
         System.Threading.Tasks.Task<Proyecto.ProductoWS.Producto> ModificarProductoAsync(Proyecto.ProductoWS.Producto productoAModificar);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductoService/EliminarProducto", ReplyAction="http://tempuri.org/IProductoService/EliminarProductoResponse")]
-        void EliminarProducto(Proyecto.ProductoWS.Producto productoAEliminar);
+        void EliminarProducto(string codigo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductoService/EliminarProducto", ReplyAction="http://tempuri.org/IProductoService/EliminarProductoResponse")]
-        System.Threading.Tasks.Task EliminarProductoAsync(Proyecto.ProductoWS.Producto productoAEliminar);
+        System.Threading.Tasks.Task EliminarProductoAsync(string codigo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductoService/ListarProductos", ReplyAction="http://tempuri.org/IProductoService/ListarProductosResponse")]
         Proyecto.ProductoWS.Producto[] ListarProductos();
@@ -222,12 +160,12 @@ namespace Proyecto.ProductoWS {
             return base.Channel.CrearProductoAsync(productoACrear);
         }
         
-        public Proyecto.ProductoWS.Producto ObtenerProducto(int co_producto) {
-            return base.Channel.ObtenerProducto(co_producto);
+        public Proyecto.ProductoWS.Producto ObtenerProducto(string codigo) {
+            return base.Channel.ObtenerProducto(codigo);
         }
         
-        public System.Threading.Tasks.Task<Proyecto.ProductoWS.Producto> ObtenerProductoAsync(int co_producto) {
-            return base.Channel.ObtenerProductoAsync(co_producto);
+        public System.Threading.Tasks.Task<Proyecto.ProductoWS.Producto> ObtenerProductoAsync(string codigo) {
+            return base.Channel.ObtenerProductoAsync(codigo);
         }
         
         public Proyecto.ProductoWS.Producto ModificarProducto(Proyecto.ProductoWS.Producto productoAModificar) {
@@ -238,12 +176,12 @@ namespace Proyecto.ProductoWS {
             return base.Channel.ModificarProductoAsync(productoAModificar);
         }
         
-        public void EliminarProducto(Proyecto.ProductoWS.Producto productoAEliminar) {
-            base.Channel.EliminarProducto(productoAEliminar);
+        public void EliminarProducto(string codigo) {
+            base.Channel.EliminarProducto(codigo);
         }
         
-        public System.Threading.Tasks.Task EliminarProductoAsync(Proyecto.ProductoWS.Producto productoAEliminar) {
-            return base.Channel.EliminarProductoAsync(productoAEliminar);
+        public System.Threading.Tasks.Task EliminarProductoAsync(string codigo) {
+            return base.Channel.EliminarProductoAsync(codigo);
         }
         
         public Proyecto.ProductoWS.Producto[] ListarProductos() {

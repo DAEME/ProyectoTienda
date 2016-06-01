@@ -12,21 +12,19 @@
 
             <div class="col-sm-12 Sinespacio">
                 <div class="col-sm-4 Sinespacio form-group">
-                    <label for="lbl_Producto_Desc" class="col-sm-4 control-label small Title">Producto</label>
+                    <label for="lbl_Producto_Id" class="col-sm-4 control-label small Title">Cod. Producto</label>
+                    <div class="col-sm-8 text-left Accordion">
+                        <input type="text" id="txtProductoId" name="txtProductoId" class="form-control input-sm txtProductoId" placeholder="" />
+                    </div>
+                </div>
+                <div class="col-sm-4 Sinespacio form-group">
+                    <label for="lbl_Producto_Desc" class="col-sm-4 control-label small Title">Descripcion</label>
                     <div class="col-sm-8 text-left Accordion">
                         <input type="text" id="txtProducto" name="txtProducto" class="form-control input-sm txtProducto" placeholder="" />
                     </div>
                 </div>
-                <div class="col-sm-4 Sinespacio form-group">
-                    <label for="lbl_Category_Vehicle_Search" class="col-sm-6 control-label small Title ">Categoria</label>
-                    <div class="col-sm-6 selectContainer">
-                        <select id="cbosCategory_Product" name="cbosCategory_Product" class="form-control input-sm cbosCategory_Product">
-                            <option value="0">-- Select --</option>
-                        </select>
-                    </div>
-                </div>
 
-                <div class="col-sm-4 Sinespacio form-group">
+                @*<div class="col-sm-4 Sinespacio form-group">
                     <label for="lbl_FechaProd" class="col-sm-6 small Title control-label">Fecha Compra</label>
                     <div class="col-sm-6 ">
                         <div class='input-group date datetimepickInicio1' id='datep_Fecha'>
@@ -36,7 +34,7 @@
                             </span>
                         </div>
                     </div>
-                </div>
+                </div>*@
             </div>
             <div class="col-sm-12">
                 <br />
@@ -66,7 +64,7 @@
 
 
 
-            <div class="col-sm-12 Sinespacio">
+            @*<div class="col-sm-12 Sinespacio">
                 <div class="col-sm-3 Sinespacio form-group">
                     <label for="lbl_Stock_Ini" class="col-sm-4 control-label small Title">Stock Ini</label>
                     <div class="col-sm-8 text-left Accordion">
@@ -92,7 +90,7 @@
                     </div>
                 </div>
 
-            </div>
+            </div>*@
 
             <div class="col-sm-12">
                 <br />
@@ -106,7 +104,7 @@
                         <table class="table table-bordered tbProducto display table-condensed" id="tbProducto" width="100%">
                             <thead id="TableHeader">
                                 <tr>
-                                    <th class="text-center">Prooducto</th>
+                                    <th class="text-center">Producto</th>
                                     <th class="text-center">Precio de Compra</th>
                                     <th class="text-center">Precio de Venta</th>
                                     <th class="text-center">Stock ini</th>
@@ -129,6 +127,9 @@
                     <button type="button" id="btnNuevo" class="btnNew">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nuevo</button>
                 </div>
                 <div class="col-sm-2 text-center" style="text-align:center;">
+                    <button type="button" id="btnModificar" class="btnNew">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Modificar</button>
+                </div>
+                <div class="col-sm-2 text-center" style="text-align:center;">
                     <button type="button" id="btnGuardar" class="btnNew">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Guardar</button>
                 </div>
                 <div class="col-sm-2 text-center" style="text-align:center;">
@@ -144,8 +145,8 @@
 </div>
 
 
-
-
+<input type="hidden" id="hdn_IPRODUCTID" name="hdn_IPRODUCTID" value="0" />
+<input type="hidden" id="accion" name="accion" class="accion" value="0" />
 
 
 <script type="text/javascript">
@@ -176,7 +177,7 @@
                 }
             },
             "fnCreatedRow": function (nRow, aData, iDataIndex) {
-                
+                $(nRow).attr('id', aData[0]);
                 //$(nRow).attr('class', 'lstNote');
                 //$(nRow).attr('style', 'cursor:pointer');
             },
@@ -186,6 +187,131 @@
         });
 
 
+        function getObjectProducto() {
+
+            var sPrinterId = $("#txtProducto").val();
+
+            var VDESCRIPTION = $("#txt_vNamePrinter").val();
+            var VIPDESCRIPTION = $("#txt_vIpDescription").val();
+            //var ILOCATIONID = $("#cboiLocationId").val();
+
+            var oProductoBE = {
+                co_producto: $("#txtProductoId").val(),
+                tx_descripcion: $("#txtProducto").val(),
+                nu_precio: $("#txtPrecioCompra").val()
+
+            };
+
+            return oProductoBE;
+        }
+
+
+        $("#btnGuardar").on('click', function (evt) {
+            evt.preventDefault();
+            var accion = $("#accion").val();
+            var oProducto = getObjectProducto();
+            
+            debugger;
+
+            if (accion == 1) {
+
+                $.ajax({
+                    url: '@Url.Action("GuardarProducto", "Compra")',
+                    type: 'POST',
+                    contentType: 'application/json; charset=utf-8',
+                    traditional: true,
+                    data: JSON.stringify(oProducto),
+                    async: false,
+                    cancel: false,
+                    success: function (data) {
+                        debugger;
+                        if (data != null) {
+                            debugger;
+
+                            tbProducto.row.add([
+                                            data.co_producto,
+                                            data.tx_descripcion,
+                                            data.nu_precio,
+                                            data.nu_precio,
+                                            data.nu_precio
+
+                            ]).draw();
+
+                            showdialog("I", "Compra", "Grabado correctamente.", "", "Aceptar");
+
+                        }
+
+
+                    }
+                });
+            }
+            else {
+                if (accion == 2) {
+
+
+                    $.ajax({
+                        url: '@Url.Action("ModificarProducto", "Compra")',
+                        type: 'POST',
+                        contentType: 'application/json; charset=utf-8',
+                        traditional: true,
+                        data: JSON.stringify(oProducto),
+                        async: false,
+                        cancel: false,
+                        success: function (data) {
+                            debugger;
+                            if (data != null) {
+                                debugger;
+                                tbProducto.row('.selected').remove().draw(false);
+                                tbProducto.row.add([
+                                                data.co_producto,
+                                                data.tx_descripcion,
+                                                data.nu_precio,
+                                                data.nu_precio,
+                                                data.nu_precio
+
+                                ]).draw();
+
+                                showdialog("I", "Compra", "Actualizado correctamente.", "", "Aceptar");
+
+                            }
+
+
+                        }
+                    });
+
+
+                }
+            }
+        });
+
+      //  $("#btnModificar").prop('disabled', false);
+
+        $("#btnNuevo").on('click', function (evt) {
+            evt.preventDefault();
+
+            $("#accion").val('1');
+            LimpiarCajasProducto();
+            //$("#btnModificar").prop('disabled', true);
+
+        });
+
+
+        $("#btnModificar").on('click', function (evt) {
+            evt.preventDefault();
+            var iProductoId = $("#hdn_IPRODUCTID").val();
+            if (iProductoId != 0) {
+                $("#accion").val('2');
+               // $("#btnNuevo").prop('disabled', true);
+            }
+            else {
+                showdialog("E", "Venta", "WARNING : NO SE HA SELECCIONADO NINGUN REGISTRO ", "", "Aceptar");
+            }
+
+
+        });
+
+
+
         $("#btnCancelar").on('click', function (evt) {
             evt.preventDefault();
 
@@ -193,6 +319,107 @@
 
 
         });
+
+        ListarProducto();
+        function ListarProducto()
+        {
+            $.ajax({
+                url: '@Url.Action("ListarProducto", "Compra")',
+                type: 'POST',
+                contentType: 'application/json; charset=utf-8',
+                traditional: true,
+                //data: JSON.stringify(oProducto),
+                async: false,
+                cancel: false,
+                success: function (data) {
+
+                    if (data != null) {
+                        $.each(data, function (i, row) {
+                            tbProducto.row.add([
+                                           row.co_producto,
+                                           row.tx_descripcion,
+                                           row.nu_precio,
+                                           row.nu_precio,
+                                           row.nu_precio
+
+                            ]).draw();
+                        });
+                    }
+
+                }
+            });
+
+        }
+
+
+
+
+        $("#tbProducto tbody").on("click", "tr", function () {
+
+            if ($(this).hasClass('selected')) {
+                $(this).removeClass('selected');
+            }
+            else {
+
+                var iProdId = $(this).attr('id');
+                $("#hdn_IPRODUCTID").val(iProdId);
+                if (iProdId != null) {
+                    tbProducto.$('tr.selected').removeClass('selected');
+                    $(this).addClass("selected");
+
+
+                    var prm = {};
+                    prm.co_producto = iProdId;
+                    //var prm = parseInt(1);//$("#txtCodProd").val();
+                    debugger;
+                    $.ajax({
+                        url: '@Url.Action("ObtenerProducto", "Venta")',
+                        type: 'POST',
+                        contentType: 'application/json; charset=utf-8',
+                        traditional: true,
+                        data: JSON.stringify(prm),
+                        async: false,
+                        cancel: false,
+                        success: function (data) {
+                            debugger;
+                            //if (data.objResult.iResultId == OK) {
+                            if (data != null) {
+                                debugger;
+                                CargarControlProducto(data);
+
+                            }
+
+
+                        }
+                    });
+
+
+                }
+
+
+            }
+
+
+        });
+
+        function CargarControlProducto(data) {
+            $("#txtProductoId").val(data.co_producto);
+            $("#txtProducto").val(data.tx_descripcion);
+            $("#txtPrecioCompra").val(data.nu_precio);
+
+        }
+
+
+        function LimpiarCajasProducto() {
+            $("#txtProductoId").val('');
+            $("#txtProducto").val('');
+            $("#txtPrecioCompra").val('');
+            $("#txtStockIni").val('');
+            $("#txtStockActual").val('');
+            $("#txtStockMin").val('');
+            $("#txtStockMax").val('');
+
+        }
 
 
     });

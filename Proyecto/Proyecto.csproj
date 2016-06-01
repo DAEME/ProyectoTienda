@@ -129,6 +129,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Clases\Producto.cs" />
     <Compile Include="Controllers\CompraController.cs" />
     <Compile Include="Controllers\OperationController.cs" />
     <Compile Include="Controllers\ProductoController.cs" />
@@ -654,13 +655,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="Service References\VentaWS\Proyecto.VentaWS.Venta.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <None Include="Service References\ProductoWS\ProductoService.wsdl" />
-    <None Include="Service References\ProductoWS\ProductoService.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Service References\ProductoWS\ProductoService1.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -670,9 +665,12 @@
     <None Include="Service References\ProductoWS\ProductoService3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\VentaWS\VentaService.disco" />
+    <None Include="Service References\VentaWS\GestionDeVentaService.disco" />
     <None Include="Service References\VentaWS\configuration91.svcinfo" />
     <None Include="Service References\VentaWS\configuration.svcinfo" />
+    <Content Include="Service References\VentaWS\Proyecto.VentaWS.Venta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\VentaWS\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -693,21 +691,21 @@
     <Content Include="Views\Venta\index.cshtml" />
     <Content Include="Views\Compra\index.cshtml" />
     <Content Include="Views\Compra\indexDetalle.cshtml" />
-    <None Include="Service References\VentaWS\VentaService.wsdl" />
-    <None Include="Service References\VentaWS\VentaService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\VentaWS\VentaService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\VentaWS\VentaService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\VentaWS\VentaService3.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <Content Include="Views\Producto\index.cshtml" />
     <Content Include="Views\Venta\indexListado.cshtml" />
+    <None Include="Service References\VentaWS\GestionDeVentaService.wsdl" />
+    <None Include="Service References\VentaWS\GestionDeVentaService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\VentaWS\GestionDeVentaService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\VentaWS\GestionDeVentaService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\VentaWS\GestionDeVentaService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

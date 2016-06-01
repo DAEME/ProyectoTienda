@@ -16,40 +16,30 @@ namespace WCFTiendaServices
 
         public Producto CrearProducto(Producto productoACrear)
         {
-            if (productoDAO.Obtener(productoACrear.co_producto) != null)
-            {
-                throw new FaultException<ClienteInexistenteError>(
-
-                    new ClienteInexistenteError()
-                    {
-                        CodigoError = 101,
-                        MensajeError = "El producto ya existe"
-                    },
-                    new FaultReason("Error al intentar creación"));
-            }
-
             return productoDAO.Crear(productoACrear);
         }
 
-        public Producto ObtenerProducto(int co_producto)
+        public void EliminarProducto(string codigo)
         {
-            return productoDAO.Obtener(co_producto);
-        }
-
-        public Producto ModificarProducto(Producto productoAModificar)
-        {
-            return productoDAO.Modificar(productoAModificar);
-        }
-      
-        public void EliminarProducto(Producto productoAEliminar)
-        {
-            productoDAO.Eliminar(productoAEliminar);
+            throw new NotImplementedException();
         }
 
         public ICollection<Producto> ListarProductos()
         {
             return productoDAO.ListarTodos();
         }
+
+        public Producto ModificarProducto(Producto productoAModificar)
+        {
+            return productoDAO.Modificar(productoAModificar);
+        }
+
+        public Producto ObtenerProducto(string codigo)
+        {
+            return productoDAO.Obtener(Convert.ToInt32(codigo));
+        }
+
+       
 
     }
 }

@@ -5,3 +5,8 @@ E:\workspace\IDR\Tienda\WCFTiendaTest\obj\Debug\WCFTiendaTest.csprojResolveAssem
 E:\workspace\IDR\Tienda\WCFTiendaTest\obj\Debug\WCFTiendaTest.dll
 E:\workspace\IDR\Tienda\WCFTiendaTest\obj\Debug\WCFTiendaTest.pdb
 E:\workspace\IDR\Tienda\WCFTiendaTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Sebastian\Source\Repos\ProyectoTienda\WCFTiendaTest\obj\Debug\WCFTiendaTest.dll
+C:\Users\Sebastian\Source\Repos\ProyectoTienda\WCFTiendaTest\obj\Debug\WCFTiendaTest.pdb
+C:\Users\Sebastian\Source\Repos\ProyectoTienda\WCFTiendaTest\bin\Debug\WCFTiendaTest.dll.config
+C:\Users\Sebastian\Source\Repos\ProyectoTienda\WCFTiendaTest\bin\Debug\WCFTiendaTest.dll
+C:\Users\Sebastian\Source\Repos\ProyectoTienda\WCFTiendaTest\bin\Debug\WCFTiendaTest.pdb

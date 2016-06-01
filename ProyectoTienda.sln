@@ -12,8 +12,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Librerias", "Librerias", "{
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proyecto", "Proyecto\Proyecto.csproj", "{381D98FB-5C2B-474C-99B6-32995D5D0E26}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CEE39C0B-E67A-476F-9ECA-2A3D6132AF5F} = {CEE39C0B-E67A-476F-9ECA-2A3D6132AF5F}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFTiendaTest", "WCFTiendaTest\WCFTiendaTest.csproj", "{2EAA2D38-6709-4812-8ACD-E7C5AA76F83E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestTest", "RestTest\RestTest.csproj", "{5D02E4CC-7473-4C40-9572-F9230AF2B096}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +38,10 @@ Global
 		{2EAA2D38-6709-4812-8ACD-E7C5AA76F83E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2EAA2D38-6709-4812-8ACD-E7C5AA76F83E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2EAA2D38-6709-4812-8ACD-E7C5AA76F83E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D02E4CC-7473-4C40-9572-F9230AF2B096}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D02E4CC-7473-4C40-9572-F9230AF2B096}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D02E4CC-7473-4C40-9572-F9230AF2B096}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D02E4CC-7473-4C40-9572-F9230AF2B096}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

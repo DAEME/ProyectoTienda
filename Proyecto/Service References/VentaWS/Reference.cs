@@ -322,47 +322,47 @@ namespace Proyecto.VentaWS {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="VentaWS.IVentaService")]
-    public interface IVentaService {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="VentaWS.IGestionDeVentaService")]
+    public interface IGestionDeVentaService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVentaService/Vender", ReplyAction="http://tempuri.org/IVentaService/VenderResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(Proyecto.VentaWS.ClienteInexistenteError), Action="http://tempuri.org/IVentaService/VenderClienteInexistenteErrorFault", Name="ClienteInexistenteError", Namespace="http://schemas.datacontract.org/2004/07/WCFTiendaServices.Errores")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGestionDeVentaService/Vender", ReplyAction="http://tempuri.org/IGestionDeVentaService/VenderResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Proyecto.VentaWS.ClienteInexistenteError), Action="http://tempuri.org/IGestionDeVentaService/VenderClienteInexistenteErrorFault", Name="ClienteInexistenteError", Namespace="http://schemas.datacontract.org/2004/07/WCFTiendaServices.Errores")]
         Proyecto.VentaWS.Venta Vender(string nu_ruc, Proyecto.VentaWS.Item[] items);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVentaService/Vender", ReplyAction="http://tempuri.org/IVentaService/VenderResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGestionDeVentaService/Vender", ReplyAction="http://tempuri.org/IGestionDeVentaService/VenderResponse")]
         System.Threading.Tasks.Task<Proyecto.VentaWS.Venta> VenderAsync(string nu_ruc, Proyecto.VentaWS.Item[] items);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVentaService/ListarVentas", ReplyAction="http://tempuri.org/IVentaService/ListarVentasResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGestionDeVentaService/ListarVentas", ReplyAction="http://tempuri.org/IGestionDeVentaService/ListarVentasResponse")]
         Proyecto.VentaWS.Venta[] ListarVentas();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IVentaService/ListarVentas", ReplyAction="http://tempuri.org/IVentaService/ListarVentasResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGestionDeVentaService/ListarVentas", ReplyAction="http://tempuri.org/IGestionDeVentaService/ListarVentasResponse")]
         System.Threading.Tasks.Task<Proyecto.VentaWS.Venta[]> ListarVentasAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IVentaServiceChannel : Proyecto.VentaWS.IVentaService, System.ServiceModel.IClientChannel {
+    public interface IGestionDeVentaServiceChannel : Proyecto.VentaWS.IGestionDeVentaService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class VentaServiceClient : System.ServiceModel.ClientBase<Proyecto.VentaWS.IVentaService>, Proyecto.VentaWS.IVentaService {
+    public partial class GestionDeVentaServiceClient : System.ServiceModel.ClientBase<Proyecto.VentaWS.IGestionDeVentaService>, Proyecto.VentaWS.IGestionDeVentaService {
         
-        public VentaServiceClient() {
+        public GestionDeVentaServiceClient() {
         }
         
-        public VentaServiceClient(string endpointConfigurationName) : 
+        public GestionDeVentaServiceClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public VentaServiceClient(string endpointConfigurationName, string remoteAddress) : 
+        public GestionDeVentaServiceClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public VentaServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public GestionDeVentaServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public VentaServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public GestionDeVentaServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         

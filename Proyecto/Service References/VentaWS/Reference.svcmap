@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="18e7a5a4-0774-4389-af3e-df32dbb748e8" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ffdc2268-1e42-482d-95d6-526c1abf20f8" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,15 +19,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:20000/VentaService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:20000/GestionDeVentaService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="VentaService.wsdl" MetadataType="Wsdl" ID="4d1f00dc-b446-4d96-8be3-247a6bb18680" SourceId="1" SourceUrl="http://localhost:20000/VentaService.svc?wsdl" />
-    <MetadataFile FileName="VentaService.xsd" MetadataType="Schema" ID="3a0d243b-e58f-44af-b9b0-51c9533a3daf" SourceId="1" SourceUrl="http://localhost:20000/VentaService.svc?xsd=xsd0" />
-    <MetadataFile FileName="VentaService.disco" MetadataType="Disco" ID="0779cc1e-13bc-4439-9f8f-ed8f70639efa" SourceId="1" SourceUrl="http://localhost:20000/VentaService.svc?disco" />
-    <MetadataFile FileName="VentaService1.xsd" MetadataType="Schema" ID="933646bd-9157-48a9-ba2b-11efcd0b158d" SourceId="1" SourceUrl="http://localhost:20000/VentaService.svc?xsd=xsd2" />
-    <MetadataFile FileName="VentaService2.xsd" MetadataType="Schema" ID="93df00d1-09fe-4d4a-b3aa-127bf733abaa" SourceId="1" SourceUrl="http://localhost:20000/VentaService.svc?xsd=xsd3" />
-    <MetadataFile FileName="VentaService3.xsd" MetadataType="Schema" ID="42a10be6-2ade-4c20-8246-012b908e7c23" SourceId="1" SourceUrl="http://localhost:20000/VentaService.svc?xsd=xsd1" />
+    <MetadataFile FileName="GestionDeVentaService.wsdl" MetadataType="Wsdl" ID="55bee74f-bec2-47b0-9fd4-4ef6e3e2501e" SourceId="1" SourceUrl="http://localhost:20000/GestionDeVentaService.svc?wsdl" />
+    <MetadataFile FileName="GestionDeVentaService.disco" MetadataType="Disco" ID="b235dbfd-336a-4569-8c0c-a473f5d2ca90" SourceId="1" SourceUrl="http://localhost:20000/GestionDeVentaService.svc?disco" />
+    <MetadataFile FileName="GestionDeVentaService.xsd" MetadataType="Schema" ID="90130360-c720-42c0-9cb6-b77816da4882" SourceId="1" SourceUrl="http://localhost:20000/GestionDeVentaService.svc?xsd=xsd0" />
+    <MetadataFile FileName="GestionDeVentaService1.xsd" MetadataType="Schema" ID="6d0fbef1-8a6d-4137-9b7c-7ab55a3aea65" SourceId="1" SourceUrl="http://localhost:20000/GestionDeVentaService.svc?xsd=xsd3" />
+    <MetadataFile FileName="GestionDeVentaService2.xsd" MetadataType="Schema" ID="a7e28528-1aef-4962-b8c5-7546e0cc10e5" SourceId="1" SourceUrl="http://localhost:20000/GestionDeVentaService.svc?xsd=xsd2" />
+    <MetadataFile FileName="GestionDeVentaService3.xsd" MetadataType="Schema" ID="8f17b29c-8c06-41e4-9de7-b4cd8b4c7c28" SourceId="1" SourceUrl="http://localhost:20000/GestionDeVentaService.svc?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

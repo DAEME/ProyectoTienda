@@ -3,7 +3,6 @@
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:20000/ProductoService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
-      <xsd:import schemaLocation="http://localhost:20000/ProductoService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/WCFTiendaServices.Errores" />
       <xsd:import schemaLocation="http://localhost:20000/ProductoService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:20000/ProductoService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WCFTiendaServices.Dominio" />
     </xsd:schema>
@@ -13,9 +12,6 @@
   </wsdl:message>
   <wsdl:message name="IProductoService_CrearProducto_OutputMessage">
     <wsdl:part name="parameters" element="tns:CrearProductoResponse" />
-  </wsdl:message>
-  <wsdl:message name="IProductoService_CrearProducto_ClienteInexistenteErrorFault_FaultMessage">
-    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/WCFTiendaServices.Errores" name="detail" element="q1:ClienteInexistenteError" />
   </wsdl:message>
   <wsdl:message name="IProductoService_ObtenerProducto_InputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerProducto" />
@@ -45,7 +41,6 @@
     <wsdl:operation name="CrearProducto">
       <wsdl:input wsaw:Action="http://tempuri.org/IProductoService/CrearProducto" message="tns:IProductoService_CrearProducto_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IProductoService/CrearProductoResponse" message="tns:IProductoService_CrearProducto_OutputMessage" />
-      <wsdl:fault wsaw:Action="http://tempuri.org/IProductoService/CrearProductoClienteInexistenteErrorFault" name="ClienteInexistenteErrorFault" message="tns:IProductoService_CrearProducto_ClienteInexistenteErrorFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="ObtenerProducto">
       <wsdl:input wsaw:Action="http://tempuri.org/IProductoService/ObtenerProducto" message="tns:IProductoService_ObtenerProducto_InputMessage" />
@@ -74,9 +69,6 @@
       <wsdl:output>
         <soap:body use="literal" />
       </wsdl:output>
-      <wsdl:fault name="ClienteInexistenteErrorFault">
-        <soap:fault use="literal" name="ClienteInexistenteErrorFault" namespace="" />
-      </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="ObtenerProducto">
       <soap:operation soapAction="http://tempuri.org/IProductoService/ObtenerProducto" style="document" />

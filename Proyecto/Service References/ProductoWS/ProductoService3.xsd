@@ -18,7 +18,7 @@
   <xs:element name="ObtenerProducto">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="co_producto" type="xs:int" />
+        <xs:element minOccurs="0" name="codigo" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -46,7 +46,7 @@
   <xs:element name="EliminarProducto">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WCFTiendaServices.Dominio" minOccurs="0" name="productoAEliminar" nillable="true" type="q6:Producto" />
+        <xs:element minOccurs="0" name="codigo" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -63,7 +63,7 @@
   <xs:element name="ListarProductosResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WCFTiendaServices.Dominio" minOccurs="0" name="ListarProductosResult" nillable="true" type="q7:ArrayOfProducto" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WCFTiendaServices.Dominio" minOccurs="0" name="ListarProductosResult" nillable="true" type="q6:ArrayOfProducto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
