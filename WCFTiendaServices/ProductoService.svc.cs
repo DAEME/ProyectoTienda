@@ -21,7 +21,7 @@ namespace WCFTiendaServices
 
         public void EliminarProducto(string codigo)
         {
-            throw new NotImplementedException();
+            productoDAO.EliminarN(Convert.ToInt32(codigo));
         }
 
         public ICollection<Producto> ListarProductos()

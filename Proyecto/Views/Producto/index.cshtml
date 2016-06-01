@@ -130,6 +130,9 @@
                     <button type="button" id="btnModificar" class="btnNew">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Modificar</button>
                 </div>
                 <div class="col-sm-2 text-center" style="text-align:center;">
+                    <button type="button" id="btnEliminar" class="btnNew">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Eliminar</button>
+                </div>
+                <div class="col-sm-2 text-center" style="text-align:center;">
                     <button type="button" id="btnGuardar" class="btnNew">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Guardar</button>
                 </div>
                 <div class="col-sm-2 text-center" style="text-align:center;">
@@ -208,6 +211,7 @@
 
         $("#btnGuardar").on('click', function (evt) {
             evt.preventDefault();
+            debugger;
             var accion = $("#accion").val();
             var oProducto = getObjectProducto();
             
@@ -237,7 +241,7 @@
 
                             ]).draw();
 
-                            showdialog("I", "Compra", "Grabado correctamente.", "", "Aceptar");
+                            showdialog("I", "Producto", "Grabado correctamente.", "", "Aceptar");
 
                         }
 
@@ -245,7 +249,7 @@
                     }
                 });
             }
-            else {
+            else 
                 if (accion == 2) {
 
 
@@ -271,7 +275,7 @@
 
                                 ]).draw();
 
-                                showdialog("I", "Compra", "Actualizado correctamente.", "", "Aceptar");
+                                showdialog("I", "Producto", "Actualizado correctamente.", "", "Aceptar");
 
                             }
 
@@ -281,7 +285,34 @@
 
 
                 }
-            }
+            else 
+                    if (accion == 3) {
+
+                        $.ajax({
+                            url: '@Url.Action("EliminarProducto", "Compra")',
+                            type: 'POST',
+                            contentType: 'application/json; charset=utf-8',
+                            traditional: true,
+                            data: JSON.stringify(oProducto),
+                            async: false,
+                            cancel: false,
+                            success: function (data) {
+                                debugger;
+                                //if (data != null) {
+                                    debugger;
+                                    tbProducto.row('.selected').remove().draw(false);
+                                  
+
+                                    showdialog("I", "Producto", "Eliminado correctamente.", "", "Aceptar");
+
+                               // }
+
+
+                            }
+                        });
+
+                    }
+
         });
 
       //  $("#btnModificar").prop('disabled', false);
@@ -310,7 +341,19 @@
 
         });
 
+        $("#btnEliminar").on('click', function (evt) {
+            evt.preventDefault();
+            var iProductoId = $("#hdn_IPRODUCTID").val();
+            if (iProductoId != 0) {
+                $("#accion").val('3');
+                // $("#btnNuevo").prop('disabled', true);
+            }
+            else {
+                showdialog("E", "Producto", "WARNING : NO SE HA SELECCIONADO NINGUN REGISTRO ", "", "Aceptar");
+            }
 
+
+        });
 
         $("#btnCancelar").on('click', function (evt) {
             evt.preventDefault();

@@ -99,6 +99,44 @@ namespace Proyecto.Controllers
         }
 
         [HttpPost]
+        public JsonResult EliminarProducto(ProductoWS.Producto objProducto)
+        {
+            //var objPrx = new VentaWS.GestionDeVentaServiceClient();
+
+            //VentaWS.Venta oVenta = objPrx.Vender(objVenta.nu_ruc.nu_ruc, objVenta.Items);
+            int co_productoA = objProducto.co_producto;
+            string tx_descripcionA = objProducto.tx_descripcion;
+            decimal nu_precioA = objProducto.nu_precio;
+
+
+            //string postdata = "{\"co_producto\":\"1\",\"tx_descripcion\":\"CarteraXime\",\"nu_precio\":\"4.0\"}";
+            string postdata = "{\"co_producto\":\"" + co_productoA.ToString() + "\"}";
+            byte[] data = Encoding.UTF8.GetBytes(postdata);
+            HttpWebRequest req = (HttpWebRequest)WebRequest
+               .Create("http://localhost:20000/ProductoService.svc/ProductoService/" + objProducto.co_producto.ToString());
+            req.Method = "DELETE";
+            req.ContentLength = data.Length;
+            req.ContentType = "application/json";
+            var reqStream = req.GetRequestStream();
+            reqStream.Write(data, 0, data.Length);
+
+            //try
+            //{
+            var res = (HttpWebResponse)req.GetResponse();
+            StreamReader reader = new StreamReader(res.GetResponseStream());
+            string productoJson = reader.ReadToEnd();
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            Producto productoEliminado = js.Deserialize<Producto>(productoJson);
+
+
+            
+
+            return Json(productoEliminado, JsonRequestBehavior.AllowGet);
+        }
+
+
+
+        [HttpPost]
         public JsonResult ListarProducto()
         {
             var objPrx = new ProductoWS.ProductoServiceClient();
