@@ -321,6 +321,83 @@ namespace Proyecto.VentaWS {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Producto", Namespace="http://schemas.datacontract.org/2004/07/WCFTiendaServices.Dominio")]
+    [System.SerializableAttribute()]
+    public partial class Producto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int co_productoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal nu_precioField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string tx_descripcionField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int co_producto {
+            get {
+                return this.co_productoField;
+            }
+            set {
+                if ((this.co_productoField.Equals(value) != true)) {
+                    this.co_productoField = value;
+                    this.RaisePropertyChanged("co_producto");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal nu_precio {
+            get {
+                return this.nu_precioField;
+            }
+            set {
+                if ((this.nu_precioField.Equals(value) != true)) {
+                    this.nu_precioField = value;
+                    this.RaisePropertyChanged("nu_precio");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string tx_descripcion {
+            get {
+                return this.tx_descripcionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.tx_descripcionField, value) != true)) {
+                    this.tx_descripcionField = value;
+                    this.RaisePropertyChanged("tx_descripcion");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="VentaWS.IGestionDeVentaService")]
     public interface IGestionDeVentaService {
@@ -331,6 +408,18 @@ namespace Proyecto.VentaWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGestionDeVentaService/Vender", ReplyAction="http://tempuri.org/IGestionDeVentaService/VenderResponse")]
         System.Threading.Tasks.Task<Proyecto.VentaWS.Venta> VenderAsync(string nu_ruc, Proyecto.VentaWS.Item[] items);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGestionDeVentaService/ObtenerCliente", ReplyAction="http://tempuri.org/IGestionDeVentaService/ObtenerClienteResponse")]
+        Proyecto.VentaWS.Cliente ObtenerCliente(string nu_ruc);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGestionDeVentaService/ObtenerCliente", ReplyAction="http://tempuri.org/IGestionDeVentaService/ObtenerClienteResponse")]
+        System.Threading.Tasks.Task<Proyecto.VentaWS.Cliente> ObtenerClienteAsync(string nu_ruc);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGestionDeVentaService/ObtenerProducto", ReplyAction="http://tempuri.org/IGestionDeVentaService/ObtenerProductoResponse")]
+        Proyecto.VentaWS.Producto ObtenerProducto(int codigo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGestionDeVentaService/ObtenerProducto", ReplyAction="http://tempuri.org/IGestionDeVentaService/ObtenerProductoResponse")]
+        System.Threading.Tasks.Task<Proyecto.VentaWS.Producto> ObtenerProductoAsync(int codigo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGestionDeVentaService/ListarVentas", ReplyAction="http://tempuri.org/IGestionDeVentaService/ListarVentasResponse")]
         Proyecto.VentaWS.Venta[] ListarVentas();
@@ -372,6 +461,22 @@ namespace Proyecto.VentaWS {
         
         public System.Threading.Tasks.Task<Proyecto.VentaWS.Venta> VenderAsync(string nu_ruc, Proyecto.VentaWS.Item[] items) {
             return base.Channel.VenderAsync(nu_ruc, items);
+        }
+        
+        public Proyecto.VentaWS.Cliente ObtenerCliente(string nu_ruc) {
+            return base.Channel.ObtenerCliente(nu_ruc);
+        }
+        
+        public System.Threading.Tasks.Task<Proyecto.VentaWS.Cliente> ObtenerClienteAsync(string nu_ruc) {
+            return base.Channel.ObtenerClienteAsync(nu_ruc);
+        }
+        
+        public Proyecto.VentaWS.Producto ObtenerProducto(int codigo) {
+            return base.Channel.ObtenerProducto(codigo);
+        }
+        
+        public System.Threading.Tasks.Task<Proyecto.VentaWS.Producto> ObtenerProductoAsync(int codigo) {
+            return base.Channel.ObtenerProductoAsync(codigo);
         }
         
         public Proyecto.VentaWS.Venta[] ListarVentas() {

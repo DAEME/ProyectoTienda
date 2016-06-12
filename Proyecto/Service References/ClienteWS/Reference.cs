@@ -23,6 +23,9 @@ namespace Proyecto.ClienteWS {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int bcatalogoidField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string nu_rucField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -38,6 +41,19 @@ namespace Proyecto.ClienteWS {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int bcatalogoid {
+            get {
+                return this.bcatalogoidField;
+            }
+            set {
+                if ((this.bcatalogoidField.Equals(value) != true)) {
+                    this.bcatalogoidField = value;
+                    this.RaisePropertyChanged("bcatalogoid");
+                }
             }
         }
         

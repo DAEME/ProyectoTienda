@@ -18,6 +18,12 @@ namespace WCFTiendaServices
         Venta Vender(string nu_ruc, List<Item> items);
 
         [OperationContract]
+        ClienteWS.Cliente ObtenerCliente(string nu_ruc);
+
+        [OperationContract]
+        Producto ObtenerProducto(int codigo);
+
+        [OperationContract]
         ICollection<Venta> ListarVentas();
     }
 }

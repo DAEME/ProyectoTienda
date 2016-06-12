@@ -671,6 +671,12 @@
     <Content Include="Service References\VentaWS\Proyecto.VentaWS.Venta.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Service References\VentaWS\Proyecto.VentaWS.Cliente.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\VentaWS\Proyecto.VentaWS.Producto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\VentaWS\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -706,6 +712,7 @@
     <None Include="Service References\VentaWS\GestionDeVentaService3.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Views\Operation\indexClientelistado.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

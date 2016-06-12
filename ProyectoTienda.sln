@@ -17,6 +17,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proyecto", "Proyecto\Proyec
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFTiendaTest", "WCFTiendaTest\WCFTiendaTest.csproj", "{2EAA2D38-6709-4812-8ACD-E7C5AA76F83E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CEE39C0B-E67A-476F-9ECA-2A3D6132AF5F} = {CEE39C0B-E67A-476F-9ECA-2A3D6132AF5F}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestTest", "RestTest\RestTest.csproj", "{5D02E4CC-7473-4C40-9572-F9230AF2B096}"
 EndProject

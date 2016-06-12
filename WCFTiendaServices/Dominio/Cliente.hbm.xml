@@ -9,5 +9,6 @@
     </id>
     <property name="tx_nombre" column="tx_nombre" />
     <property name="tx_direccion" column="tx_direccion" />
+    <property name="bcatalogoid" column="bcatalogoid" />
   </class>
 </hibernate-mapping>

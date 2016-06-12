@@ -8,6 +8,7 @@ using System.Net;
 using System.Web;
 using System.Web.Script.Serialization;
 using System.Web.UI;
+using System.ServiceModel;
 
 namespace Proyecto.Controllers
 {
@@ -32,34 +33,60 @@ namespace Proyecto.Controllers
         {
             var objPrx = new ProductoWS.ProductoServiceClient();
             ProductoWS.Producto oProducto = new ProductoWS.Producto();
-
+            string mensajeError = "";
             StreamReader reader1 = null;
 
-            HttpWebRequest req1 = (HttpWebRequest)WebRequest
-                      .Create("http://localhost:20000/ProductoService.svc/ProductoService/" + objProducto.co_producto.ToString());
-            req1.Method = "GET";
-            HttpWebResponse res1 = null;
+            try
+            {
+                HttpWebRequest req1 = (HttpWebRequest)WebRequest
+                          .Create("http://localhost:20000/ProductoService.svc/ProductoService/" + objProducto.co_producto.ToString());
+                req1.Method = "GET";
+                HttpWebResponse res1 = null;
+                res1 = (HttpWebResponse)req1.GetResponse();
+                reader1 = new StreamReader(res1.GetResponseStream());
+                string productosJson1 = reader1.ReadToEnd();
+                JavaScriptSerializer js1 = new JavaScriptSerializer();
+                oProducto = js1.Deserialize<ProductoWS.Producto>(productosJson1);
 
-            res1 = (HttpWebResponse)req1.GetResponse();
+            }
+            catch (WebException e)
+            {
+                HttpStatusCode code = ((HttpWebResponse)e.Response).StatusCode;
+                string message = ((HttpWebResponse)e.Response).StatusDescription;
+                StreamReader reader = new StreamReader(e.Response.GetResponseStream());
 
-            reader1 = new StreamReader(res1.GetResponseStream());
-            string productosJson1 = reader1.ReadToEnd();
-            JavaScriptSerializer js1 = new JavaScriptSerializer();
-            oProducto = js1.Deserialize<ProductoWS.Producto>(productosJson1);
-            
-            //SOAP
-            // ProductoWS.Producto oProducto = objPrx.ObtenerProducto(objProducto.co_producto.ToString());
-           
-            return Json(oProducto, JsonRequestBehavior.AllowGet);
+                string error = reader.ReadToEnd();
+                JavaScriptSerializer js = new JavaScriptSerializer();
+                mensajeError = js.Deserialize<string>(error);
+               // Assert.AreEqual("Producto imposible", mensaje);
+
+            }
+
+            return Json(new { oProducto, mensajeError }, JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]
         public JsonResult ObtenerCliente(ClienteWS.Cliente objCliente)
         {
-            var objPrx = new ClienteWS.ClienteServiceClient();
+            var objPrx = new VentaWS.GestionDeVentaServiceClient();
+            //ClienteWS.Cliente oCliente = new ClienteWS.Cliente();
+            VentaWS.Cliente oCliente = new VentaWS.Cliente();
 
-            ClienteWS.Cliente oCliente = objPrx.ObtenerCliente(objCliente.nu_ruc);
-            return Json(oCliente, JsonRequestBehavior.AllowGet);
+            ClienteWS.ClienteInexistenteError error2 = new ClienteWS.ClienteInexistenteError();
+
+            try {
+
+                oCliente = objPrx.ObtenerCliente(objCliente.nu_ruc);
+                
+            }
+           catch(FaultException e)
+            {
+                 error2.MensajeError = e.Reason.ToString();
+            }
+            
+            return Json(new { oCliente, error2 } , JsonRequestBehavior.AllowGet);
+
+            
         }
 
         [HttpPost]

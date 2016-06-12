@@ -34,14 +34,18 @@ namespace Proyecto.Controllers
             //var objPrx = new VentaWS.GestionDeVentaServiceClient();
 
             //VentaWS.Venta oVenta = objPrx.Vender(objVenta.nu_ruc.nu_ruc, objVenta.Items);
+            Producto productoCreado = new Producto();
             int co_productoA = objProducto.co_producto;
             string tx_descripcionA = objProducto.tx_descripcion;
             decimal nu_precioA = objProducto.nu_precio;
-
+            string mensajeError = "";
 
             //string postdata = "{\"co_producto\":\"1\",\"tx_descripcion\":\"CarteraXime\",\"nu_precio\":\"4.0\"}";
             string postdata = "{\"co_producto\":\"" + co_productoA.ToString() + "\",\"tx_descripcion\":\" "+ tx_descripcionA.ToString()+ "\",\"nu_precio\":\""+ nu_precioA.ToString() + "\"}";
             byte[] data = Encoding.UTF8.GetBytes(postdata);
+
+           
+
             HttpWebRequest req = (HttpWebRequest)WebRequest
                 .Create("http://localhost:20000/ProductoService.svc/ProductoService");
             req.Method = "POST";
@@ -50,17 +54,32 @@ namespace Proyecto.Controllers
             var reqStream = req.GetRequestStream();
             reqStream.Write(data, 0, data.Length);
 
-            //try
-            //{
+            try
+            {
             var res = (HttpWebResponse)req.GetResponse();
             StreamReader reader = new StreamReader(res.GetResponseStream());
             string productoJson = reader.ReadToEnd();
             JavaScriptSerializer js = new JavaScriptSerializer();
-            Producto productoCreado = js.Deserialize<Producto>(productoJson);
+            productoCreado = js.Deserialize<Producto>(productoJson);
+
+
+            }
+            catch (WebException e)
+            {
+                HttpStatusCode code = ((HttpWebResponse)e.Response).StatusCode;
+                string message = ((HttpWebResponse)e.Response).StatusDescription;
+                StreamReader reader = new StreamReader(e.Response.GetResponseStream());
+
+                string error = reader.ReadToEnd();
+                JavaScriptSerializer js = new JavaScriptSerializer();
+                mensajeError = js.Deserialize<string>(error);
+               // Assert.AreEqual("Producto imposible", mensaje);
+
+            }
 
 
 
-            return Json(productoCreado, JsonRequestBehavior.AllowGet);
+            return Json(new { productoCreado , mensajeError }, JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]

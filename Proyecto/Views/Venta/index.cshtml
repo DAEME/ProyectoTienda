@@ -221,12 +221,15 @@
                 async: false,
                 cancel: false,
                 success: function (data) {
+                    if (data.oCliente.nu_ruc != null) {
+                        $("#hdn_NRORUC").val(data.oCliente.tx_nombre);
+                        $("#txtCliente").val(data.oCliente.tx_nombre);
+                        $("#txtDireccionCliente").val(data.oCliente.tx_direccion);
 
-                    if (data != null) {
-                        $("#hdn_NRORUC").val(data.tx_nombre);
-                        $("#txtCliente").val(data.tx_nombre);
-                        $("#txtDireccionCliente").val(data.tx_direccion);
-
+                    }
+                    else
+                    {
+                        showdialog("E", "Venta", data.error2.MensajeError, "", "Aceptar");
                     }
 
 
@@ -259,14 +262,19 @@
                 success: function (data) {
                     debugger;
                     //if (data.objResult.iResultId == OK) {
-                    if (data != null) {
+                    if (data.oProducto.co_producto != 0) {
                         debugger;
                         tbProducto.row.add([
-                                           data.co_producto,
-                                           data.tx_descripcion,
-                                           data.nu_precio
+                                           data.oProducto.co_producto,
+                                           data.oProducto.tx_descripcion,
+                                           data.oProducto.nu_precio
 
                         ]).draw();
+
+                    }
+                    else {
+
+                        showdialog("E", "Venta", data.mensajeError, "", "Aceptar");
 
                     }
 

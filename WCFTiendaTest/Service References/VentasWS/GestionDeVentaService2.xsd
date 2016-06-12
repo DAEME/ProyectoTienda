@@ -15,7 +15,7 @@
   <xs:element name="Item" nillable="true" type="tns:Item" />
   <xs:complexType name="Venta">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Detalles" nillable="true" type="tns:ArrayOfVentaDetalle" />
+      <xs:element minOccurs="0" name="Items" nillable="true" type="tns:ArrayOfItem" />
       <xs:element minOccurs="0" name="dt_fecha" type="xs:dateTime" />
       <xs:element minOccurs="0" name="nu_ruc" nillable="true" type="tns:Cliente" />
       <xs:element minOccurs="0" name="nu_total" type="xs:decimal" />
@@ -23,35 +23,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Venta" nillable="true" type="tns:Venta" />
-  <xs:complexType name="ArrayOfVentaDetalle">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="VentaDetalle" nillable="true" type="tns:VentaDetalle" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfVentaDetalle" nillable="true" type="tns:ArrayOfVentaDetalle" />
-  <xs:complexType name="VentaDetalle">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Pk" nillable="true" type="tns:VentaDetallePK" />
-      <xs:element minOccurs="0" name="nu_cantidad" type="xs:int" />
-      <xs:element minOccurs="0" name="nu_subtotal" type="xs:decimal" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="VentaDetalle" nillable="true" type="tns:VentaDetalle" />
-  <xs:complexType name="VentaDetallePK">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="co_producto" nillable="true" type="tns:Producto" />
-      <xs:element minOccurs="0" name="nu_venta" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="VentaDetallePK" nillable="true" type="tns:VentaDetallePK" />
-  <xs:complexType name="Producto">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="co_producto" type="xs:int" />
-      <xs:element minOccurs="0" name="nu_precio" type="xs:decimal" />
-      <xs:element minOccurs="0" name="tx_descripcion" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="Producto" nillable="true" type="tns:Producto" />
   <xs:complexType name="Cliente">
     <xs:sequence>
       <xs:element minOccurs="0" name="nu_ruc" nillable="true" type="xs:string" />
@@ -60,6 +31,14 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Cliente" nillable="true" type="tns:Cliente" />
+  <xs:complexType name="Producto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="co_producto" type="xs:int" />
+      <xs:element minOccurs="0" name="nu_precio" type="xs:decimal" />
+      <xs:element minOccurs="0" name="tx_descripcion" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Producto" nillable="true" type="tns:Producto" />
   <xs:complexType name="ArrayOfVenta">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Venta" nillable="true" type="tns:Venta" />

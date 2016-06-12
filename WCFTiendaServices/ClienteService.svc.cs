@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Messaging;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
@@ -33,6 +34,21 @@ namespace WCFTiendaServices
 
         public Cliente ObtenerCliente(string nu_ruc)
         {
+
+            if (clienteDAO.Obtener(nu_ruc) == null)
+            {
+                throw new FaultException<ClienteInexistenteError>(
+                   new ClienteInexistenteError()
+                   {
+                       CodigoError = 101,
+                       MensajeError = "El cliente no existe"
+                   },
+                   new FaultReason("El cliente no existe"));
+
+            }
+
+
+
             return clienteDAO.Obtener(nu_ruc);
         }
 
@@ -45,15 +61,49 @@ namespace WCFTiendaServices
               {
                    clienteDAO.Eliminar(clienteAEliminar);
               }
-      
 
-      /*  public void EliminarCliente(string nu_ruc)
+
+        /*  public void EliminarCliente(string nu_ruc)
+          {
+              clienteDAO.EliminarSimple(nu_ruc);
+          }*/
+
+        private void recibirMensajes()
         {
-            clienteDAO.EliminarSimple(nu_ruc);
-        }*/
+            //Cliente c = new Cliente();
+            ICollection<Cliente> clie = new List<Cliente>();
+            clie = clienteDAO.ListarTodos();
+            //Catalogo pedidosEnCola = null;
+            string rutaCola = @".\private$\catalogo";
+            if (!MessageQueue.Exists(rutaCola))
+            {
+                MessageQueue.Create(rutaCola);
+            }
+            MessageQueue cola = new MessageQueue(rutaCola);
+            cola.Formatter = new XmlMessageFormatter(new Type[] { typeof(Catalogo) });
+            Message mensajes = cola.Receive();
+            Catalogo cat = (Catalogo)mensajes.Body;
+
+            if (cat.bcatalogoid == 1)
+            {
+                foreach (Cliente c in clie)
+                {
+                    c.bcatalogoid = 1;
+
+                    clienteDAO.Modificar(c);
+
+                }
+
+
+            }
+            
+
+          //  return pedidosEnCola;
+        }
 
         public ICollection<Cliente> ListarClientes()
         {
+            recibirMensajes();
             return clienteDAO.ListarTodos();
 
         }

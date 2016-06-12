@@ -15,7 +15,7 @@ namespace RestTest
         [TestMethod]
         public void CRUDTest()
         {
-            string postdata = "{\"co_producto\":\"22\",\"tx_descripcion\":\"CarteraSeb\",\"nu_precio\":\"4.0\"}";
+            string postdata = "{\"co_producto\":\"24\",\"tx_descripcion\":\"CarteraSeb\",\"nu_precio\":\"4.0\"}";
             byte[] data = Encoding.UTF8.GetBytes(postdata);
             HttpWebRequest req = (HttpWebRequest)WebRequest
                 .Create("http://localhost:20000/ProductoService.svc/ProductoService");
@@ -59,7 +59,7 @@ namespace RestTest
         [TestMethod]
         public void CRUDTestUpdate()
         {
-            string postdata = "{\"co_producto\":\"22\",\"tx_descripcion\":\"Mochila\",\"nu_precio\":\"4.0\"}";
+            string postdata = "{\"co_producto\":\"24\",\"tx_descripcion\":\"Mochila333\",\"nu_precio\":\"4.0\"}";
             byte[] data = Encoding.UTF8.GetBytes(postdata);
             HttpWebRequest req = (HttpWebRequest)WebRequest
                  .Create("http://localhost:20000/ProductoService.svc/ProductoService");
@@ -76,7 +76,7 @@ namespace RestTest
                 string productoJson = reader.ReadToEnd();
                 JavaScriptSerializer js = new JavaScriptSerializer();
                 Producto productoCreado = js.Deserialize<Producto>(productoJson);
-                Assert.AreEqual(1, productoCreado.co_producto);
+                Assert.AreEqual(24, productoCreado.co_producto);
                 Assert.AreEqual("Mochila", productoCreado.tx_descripcion);
                 Assert.AreEqual(4.0, productoCreado.nu_precio);
 

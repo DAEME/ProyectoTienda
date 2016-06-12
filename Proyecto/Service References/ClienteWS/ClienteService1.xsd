@@ -2,6 +2,7 @@
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WCFTiendaServices.Dominio" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WCFTiendaServices.Dominio" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:complexType name="Cliente">
     <xs:sequence>
+      <xs:element minOccurs="0" name="bcatalogoid" type="xs:int" />
       <xs:element minOccurs="0" name="nu_ruc" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="tx_direccion" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="tx_nombre" nillable="true" type="xs:string" />

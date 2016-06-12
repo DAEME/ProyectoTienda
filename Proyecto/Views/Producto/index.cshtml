@@ -229,19 +229,24 @@
                     cancel: false,
                     success: function (data) {
                         debugger;
-                        if (data != null) {
+                        if (data.productoCreado.co_producto != 0) {
                             debugger;
-
+                            HabilitarBotonesProducto(true);
+                            HabilitarTablaProducto(true);
                             tbProducto.row.add([
-                                            data.co_producto,
-                                            data.tx_descripcion,
-                                            data.nu_precio,
-                                            data.nu_precio,
-                                            data.nu_precio
+                                            data.productoCreado.co_producto,
+                                            data.productoCreado.tx_descripcion,
+                                            data.productoCreado.nu_precio,
+                                            data.productoCreado.nu_precio,
+                                            data.productoCreado.nu_precio
 
                             ]).draw();
 
                             showdialog("I", "Producto", "Grabado correctamente.", "", "Aceptar");
+
+                        }
+                        else {
+                            showdialog("I", "Producto", data.mensajeError, "", "Aceptar");
 
                         }
 
@@ -264,6 +269,8 @@
                         success: function (data) {
                             debugger;
                             if (data != null) {
+                                HabilitarBotonesProducto(true);
+                                HabilitarTablaProducto(true);
                                 debugger;
                                 tbProducto.row('.selected').remove().draw(false);
                                 tbProducto.row.add([
@@ -299,6 +306,7 @@
                             success: function (data) {
                                 debugger;
                                 //if (data != null) {
+                                HabilitarBotonesProducto(true);
                                     debugger;
                                     tbProducto.row('.selected').remove().draw(false);
                                   
@@ -315,13 +323,26 @@
 
         });
 
-      //  $("#btnModificar").prop('disabled', false);
+        HabilitarBotonesProducto(true);
+        //  $("#btnModificar").prop('disabled', false);
+        function HabilitarBotonesProducto(estado) {
+            $("#btnNuevo").prop('disabled', !estado);
+            $("#btnGuardar").prop('disabled', estado);
+            $("#btnModificar").prop('disabled', !estado);
+            $("#btnCancelar").prop('disabled', estado);
+            $("#btnEliminar").prop('disabled', !estado);
+        }
+
+        
+        
 
         $("#btnNuevo").on('click', function (evt) {
             evt.preventDefault();
 
             $("#accion").val('1');
             LimpiarCajasProducto();
+            HabilitarBotonesProducto(false);
+            HabilitarTablaProducto(false);
             //$("#btnModificar").prop('disabled', true);
 
         });
@@ -332,6 +353,8 @@
             var iProductoId = $("#hdn_IPRODUCTID").val();
             if (iProductoId != 0) {
                 $("#accion").val('2');
+                HabilitarBotonesProducto(false);
+                HabilitarTablaProducto(true);
                // $("#btnNuevo").prop('disabled', true);
             }
             else {
@@ -358,10 +381,20 @@
         $("#btnCancelar").on('click', function (evt) {
             evt.preventDefault();
 
-            window.location.href = "http://localhost:3662/Operation/";
+
+            LimpiarCajasProducto();
+            HabilitarTablaPrinterUser(true);
+            HabilitarBotonesProducto(true);
+            HabilitarTablaProducto(true);
+            //window.location.href = "http://localhost:3662/Operation/";
 
 
         });
+
+        function HabilitarTablaProducto(estado) {
+            $("#tbProducto tbody tr").prop('disabled', !estado);
+        }
+
 
         ListarProducto();
         function ListarProducto()
@@ -403,7 +436,7 @@
                 $(this).removeClass('selected');
             }
             else {
-
+                debugger;
                 var iProdId = $(this).attr('id');
                 $("#hdn_IPRODUCTID").val(iProdId);
                 if (iProdId != null) {
@@ -426,9 +459,9 @@
                         success: function (data) {
                             debugger;
                             //if (data.objResult.iResultId == OK) {
-                            if (data != null) {
+                            if (data.oProducto.co_producto != null) {
                                 debugger;
-                                CargarControlProducto(data);
+                                CargarControlProducto(data.oProducto);
 
                             }
 

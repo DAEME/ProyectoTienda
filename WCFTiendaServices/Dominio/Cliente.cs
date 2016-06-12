@@ -15,5 +15,7 @@ namespace WCFTiendaServices.Dominio
         public string tx_nombre { get; set; }
         [DataMember]
         public string tx_direccion { get; set; }
+        [DataMember]
+        public int bcatalogoid { get; set; }
     }
 }

@@ -1,0 +1,144 @@
+﻿@{
+    ViewBag.Title = "indexClientelistado";
+    Layout = "~/Views/Shared/_LayoutMenu.cshtml";
+}
+
+<div class="col-sm-12">
+    <form id="form_Venta" class="form-horizontal mitad" action="" method="post" accept-charset="utf-8" role="form" enctype="multipart/form-data">
+        <fieldset style="margin:0px;padding-top:1px;">
+            <legend align="left" style="margin:0px;">Ventas</legend>
+
+
+            <div class="col-sm-12 Sinespacio">
+                <div class="col-sm-3 form-group">
+                    <button type="button" id="btnConsultar" class="btnNew">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Consultar</button>
+                </div>
+                <div class="col-sm-3 text-center" style="text-align:center;">
+                    <button type="button" id="btnCancelar" class="btnNew">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cancelar</button>
+                </div>
+                <div class="col-sm-6 Sinespacio form-group">
+
+                </div>
+
+            </div>
+
+
+            <div class="col-sm-12">
+                <br />
+
+            </div>
+
+
+            <fieldset style="margin:0px;padding-top:1px;">
+                <legend align="left" style="margin:0px;">Ventas</legend>
+                <div class="col-sm-12 Sinespacio">
+                    <div class="table-responsive">
+                        <table class="table table-bordered tbCliente display table-condensed" id="tbCliente" width="100%">
+                            <thead id="TableHeader">
+                                <tr>
+                                    <th class="text-center">RUC</th>
+                                    <th class="text-center">Nombre</th>
+                                    <th class="text-center">Direccion</th>
+                                    <th class="text-center">Catalogo</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </fieldset>
+
+        </fieldset>
+    </form>
+</div>
+
+
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        var tbCliente = $('#tbCliente').DataTable({
+            "order": [[0, "desc"]],
+            "sDom": 'T C lfrtip',
+            "pageLength": 5,
+            //"aoColumnDefs": [
+            //           { "bSortable": false, "aTargets": [1], "visible": false }
+            //],
+            "pagingType": "full_numbers",
+            "language": {
+                "sZeroRecords": "No se encontraron Registros",
+                "sInfo": "Mostrando el total de Registros",
+                "sLengthMenu": "Filas por Página",
+                "sInfoEmpty": "Mosrando 0 de 0 Registros",
+                "sInfoFiltered": "Información Filtrada",
+                "sEmptyTable": "No hay datos Disponibles para mostrar en la Tabla",
+                "sSearch": "Buscar",
+                "oPaginate": {
+                    "sFirst": "Primero",
+                    "sLast": "Último",
+                    "sNext": "Siguiente",
+                    "sPrevious": "Previo"
+                }
+            },
+            "fnCreatedRow": function (nRow, aData, iDataIndex) {
+                //$(nRow).attr('class', 'lstNote');
+                //$(nRow).attr('style', 'cursor:pointer');
+            },
+            "fnRowCallback": function (nRow, aData, iDataIndex, iDataIndexFull) {
+                //$('td:eq(1)', nRow).addClass('text-left font-bold');
+            }
+        });
+
+        $("#btnConsultar").live('click', function (evt) {
+            evt.preventDefault();
+            //var prm = parseInt(1);//$("#txtCodProd").val();
+            debugger;
+            $.ajax({
+                url: '@Url.Action("Listado", "Operation")',
+                type: 'POST',
+                contentType: 'application/json; charset=utf-8',
+                traditional: true,
+                //data: JSON.stringify(prm),
+                async: false,
+                cancel: false,
+                success: function (data) {
+                    if (data != null) {
+
+                        $.each(data, function (i, row) {
+                            tbCliente.row.add([
+                                        row.nu_ruc,
+                                        row.tx_nombre,
+                                        row.tx_direccion,
+                                        row.bcatalogoid
+                                            
+                            ]).draw();
+
+
+                        });
+
+                    }
+
+
+                }
+            });
+
+        $("#btnCancelar").on('click', function (evt) {
+            evt.preventDefault();
+
+            window.location.href = "http://localhost:3662/Operation/";
+
+
+        });
+
+
+        });
+    });
+
+
+</script>
+
+
+
