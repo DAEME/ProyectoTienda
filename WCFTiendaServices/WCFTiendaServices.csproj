@@ -200,6 +200,12 @@
     <Content Include="Service References\VentaWS\WCFTiendaServices.VentaWS.Venta.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Service References\VentaWS\WCFTiendaServices.VentaWS.Cliente.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\VentaWS\WCFTiendaServices.VentaWS.Producto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

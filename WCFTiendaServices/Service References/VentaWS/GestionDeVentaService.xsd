@@ -16,6 +16,34 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ObtenerCliente">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nu_ruc" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerClienteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WCFTiendaServices.Dominio" minOccurs="0" name="ObtenerClienteResult" nillable="true" type="q3:Cliente" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerProducto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="codigo" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerProductoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WCFTiendaServices.Dominio" minOccurs="0" name="ObtenerProductoResult" nillable="true" type="q4:Producto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="ListarVentas">
     <xs:complexType>
       <xs:sequence />
@@ -24,7 +52,7 @@
   <xs:element name="ListarVentasResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WCFTiendaServices.Dominio" minOccurs="0" name="ListarVentasResult" nillable="true" type="q3:ArrayOfVenta" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WCFTiendaServices.Dominio" minOccurs="0" name="ListarVentasResult" nillable="true" type="q5:ArrayOfVenta" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

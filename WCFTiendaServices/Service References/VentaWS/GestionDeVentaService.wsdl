@@ -17,6 +17,18 @@
   <wsdl:message name="IGestionDeVentaService_Vender_ClienteInexistenteErrorFault_FaultMessage">
     <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/WCFTiendaServices.Errores" name="detail" element="q1:ClienteInexistenteError" />
   </wsdl:message>
+  <wsdl:message name="IGestionDeVentaService_ObtenerCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerCliente" />
+  </wsdl:message>
+  <wsdl:message name="IGestionDeVentaService_ObtenerCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGestionDeVentaService_ObtenerProducto_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerProducto" />
+  </wsdl:message>
+  <wsdl:message name="IGestionDeVentaService_ObtenerProducto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerProductoResponse" />
+  </wsdl:message>
   <wsdl:message name="IGestionDeVentaService_ListarVentas_InputMessage">
     <wsdl:part name="parameters" element="tns:ListarVentas" />
   </wsdl:message>
@@ -28,6 +40,14 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IGestionDeVentaService/Vender" message="tns:IGestionDeVentaService_Vender_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IGestionDeVentaService/VenderResponse" message="tns:IGestionDeVentaService_Vender_OutputMessage" />
       <wsdl:fault wsaw:Action="http://tempuri.org/IGestionDeVentaService/VenderClienteInexistenteErrorFault" name="ClienteInexistenteErrorFault" message="tns:IGestionDeVentaService_Vender_ClienteInexistenteErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGestionDeVentaService/ObtenerCliente" message="tns:IGestionDeVentaService_ObtenerCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGestionDeVentaService/ObtenerClienteResponse" message="tns:IGestionDeVentaService_ObtenerCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerProducto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGestionDeVentaService/ObtenerProducto" message="tns:IGestionDeVentaService_ObtenerProducto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGestionDeVentaService/ObtenerProductoResponse" message="tns:IGestionDeVentaService_ObtenerProducto_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ListarVentas">
       <wsdl:input wsaw:Action="http://tempuri.org/IGestionDeVentaService/ListarVentas" message="tns:IGestionDeVentaService_ListarVentas_InputMessage" />
@@ -47,6 +67,24 @@
       <wsdl:fault name="ClienteInexistenteErrorFault">
         <soap:fault use="literal" name="ClienteInexistenteErrorFault" namespace="" />
       </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerCliente">
+      <soap:operation soapAction="http://tempuri.org/IGestionDeVentaService/ObtenerCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerProducto">
+      <soap:operation soapAction="http://tempuri.org/IGestionDeVentaService/ObtenerProducto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="ListarVentas">
       <soap:operation soapAction="http://tempuri.org/IGestionDeVentaService/ListarVentas" style="document" />

@@ -81,7 +81,13 @@ namespace WCFTiendaServices
             }
             MessageQueue cola = new MessageQueue(rutaCola);
             cola.Formatter = new XmlMessageFormatter(new Type[] { typeof(Catalogo) });
+
+            if (cola.GetAllMessages().Count() > 0)
+            { 
+
             Message mensajes = cola.Receive();
+
+            
             Catalogo cat = (Catalogo)mensajes.Body;
 
             if (cat.bcatalogoid == 1)
@@ -96,9 +102,11 @@ namespace WCFTiendaServices
 
 
             }
-            
 
-          //  return pedidosEnCola;
+            }
+
+
+            //  return pedidosEnCola;
         }
 
         public ICollection<Cliente> ListarClientes()
